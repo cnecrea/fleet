@@ -1,0 +1,684 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add Transport Vehicle",
+        "description": "Enter the vehicle's registration number, without spaces or hyphens (e.g.: B123ABC). Other details can be added later from the integration settings.",
+        "data": {
+          "nr_inmatriculare": "Vehicle Registration Number"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This vehicle is already configured."
+    },
+    "error": {
+      "numar_gol": "The registration number cannot be empty.",
+      "format_numar_invalid": "Invalid format. Enter the number without spaces, hyphens or other special characters (e.g.: B123ABC).",
+      "format_data_invalid": "Invalid date format. Use the format DD.MM.YYYY (e.g.: 18.04.2026).",
+      "an_invalid": "Invalid year. Enter a valid 4-digit year."
+    }
+  },
+  "options": {
+    "error": {
+      "format_data_invalid": "Invalid date format. Use the format DD.MM.YYYY (e.g.: 18.04.2026).",
+      "an_invalid": "Invalid year. Enter a valid 4-digit year (check the allowed range).",
+      "km_necesar": "You must first configure the vehicle's current mileage (main menu → Update mileage).",
+      "license_key_empty": "Please enter a license key.",
+      "license_key_invalid": "Invalid license key. Check the format and try again.",
+      "license_already_used": "This license key has already been used on another installation.",
+      "license_key_expired": "This license key has expired.",
+      "license_fingerprint_mismatch": "This license key is bound to a different installation.",
+      "license_network_error": "Cannot connect to the license server. Check your internet connection.",
+      "license_server_error": "License server error. Please try again later."
+    },
+    "step": {
+      "init": {
+        "title": "Fleet Management",
+        "description": "Select the category to manage",
+        "menu_options": {
+          "identificare": "Vehicle Identification",
+          "sofer": "Driver Information",
+          "rca": "RCA Insurance",
+          "casco": "CASCO Insurance",
+          "itp": "ITP Inspection",
+          "rovinieta": "Vignette",
+          "administrativ": "Administrative",
+          "licente": "Transport Licenses",
+          "adr": "ADR Certification",
+          "tahograf": "Tachograph",
+          "combustibil_adblue": "Fuel & AdBlue",
+          "mentenanta": "Maintenance",
+          "remorca": "Trailer Information",
+          "costuri": "Costs",
+          "kilometraj": "Mileage & Engine Hours",
+          "licenta": "License"
+        }
+      },
+      "identificare": {
+        "title": "Vehicle Identification",
+        "description": "Fill in the vehicle identification data. All fields are optional.",
+        "data": {
+          "marca": "Brand/Manufacturer",
+          "model": "Model",
+          "vin": "VIN (Vehicle Identification Number)",
+          "serie_civ": "Civil Series Number",
+          "an_fabricatie": "Year of Manufacture",
+          "an_prima_inmatriculare": "Year of First Registration",
+          "motorizare": "Engine Description",
+          "combustibil": "Fuel Type",
+          "capacitate_cilindrica": "Engine Capacity (cc)",
+          "putere_kw": "Power (kW)",
+          "putere_cp": "Power (HP)",
+          "tip_vehicul": "Vehicle Type",
+          "mma": "Maximum Authorized Mass (kg)",
+          "masa_proprie": "Tare Weight (kg)",
+          "nr_axe": "Number of Axles",
+          "categorie_euro": "Euro Category",
+          "tip_suspensie": "Suspension Type"
+        }
+      },
+      "sofer": {
+        "title": "Driver Information",
+        "description": "Enter driver details and documents",
+        "data": {
+          "sofer_nume": "Driver Name",
+          "sofer_cnp": "CNP (Personal Identification Number)",
+          "sofer_nr_permis": "Driver License Number",
+          "sofer_categorii_permis": "License Categories",
+          "sofer_data_expirare_permis": "License Expiration Date",
+          "sofer_cpc_numar": "CPC Number",
+          "sofer_cpc_data_expirare": "CPC Expiration Date",
+          "sofer_cpc_tip": "CPC Type",
+          "sofer_card_tahograf_numar": "Tachograph Card Number",
+          "sofer_card_tahograf_data_expirare": "Tachograph Card Expiration Date",
+          "sofer_atestat_adr_numar": "ADR Certification Number",
+          "sofer_atestat_adr_data_expirare": "ADR Certification Expiration Date",
+          "sofer_atestat_adr_clase": "ADR Classes",
+          "sofer_fisa_medicala_data": "Medical Examination Date",
+          "sofer_fisa_medicala_data_expirare": "Medical Examination Expiration Date",
+          "sofer_fisa_medicala_apt": "Medical Fitness Status",
+          "sofer_fisa_psihologica_data": "Psychological Examination Date",
+          "sofer_fisa_psihologica_data_expirare": "Psychological Examination Expiration Date"
+        }
+      },
+      "rca": {
+        "title": "RCA Insurance",
+        "description": "Enter RCA insurance details",
+        "data": {
+          "rca_numar_polita": "Policy Number",
+          "rca_companie": "Insurance Company",
+          "rca_data_emitere": "Issuance Date",
+          "rca_data_expirare": "Expiration Date",
+          "rca_cost": "Annual Premium (RON)",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "casco": {
+        "title": "CASCO Insurance",
+        "description": "Enter CASCO insurance details",
+        "data": {
+          "casco_numar_polita": "Policy Number",
+          "casco_companie": "Insurance Company",
+          "casco_data_emitere": "Issuance Date",
+          "casco_data_expirare": "Expiration Date",
+          "casco_cost": "Annual Premium (RON)",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "itp": {
+        "title": "ITP Inspection",
+        "description": "Enter ITP technical inspection details",
+        "data": {
+          "itp_data_expirare": "Expiration Date",
+          "itp_statie": "Inspection Station",
+          "itp_kilometraj": "Mileage at Inspection",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "rovinieta": {
+        "title": "Vignette",
+        "description": "Enter vignette details",
+        "data": {
+          "rovinieta_data_inceput": "Start Date",
+          "rovinieta_data_sfarsit": "End Date",
+          "rovinieta_categorie": "Vehicle Category",
+          "rovinieta_pret": "Price (RON)",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "administrativ": {
+        "title": "Administrative",
+        "description": "Enter administrative details",
+        "data": {
+          "proprietar": "Owner Name",
+          "tip_proprietate": "Ownership Type",
+          "impozit_suma": "Tax Amount (RON)",
+          "impozit_scadenta": "Tax Due Date",
+          "impozit_localitate": "Tax Municipality",
+          "leasing_data_expirare": "Leasing End Date"
+        }
+      },
+      "leasing_data": {
+        "title": "Leasing Information",
+        "description": "Enter leasing contract details",
+        "data": {
+          "leasing_data_expirare": "Leasing Contract Expiration Date"
+        }
+      },
+      "licente": {
+        "title": "Transport Licenses",
+        "description": "Enter license details",
+        "data": {
+          "licenta_transport_numar": "Transport License Number",
+          "licenta_transport_tip": "Transport License Type",
+          "licenta_transport_data_expirare": "Transport License Expiration Date",
+          "copie_conforma_numar": "Certified Copy Number",
+          "copie_conforma_data_expirare": "Certified Copy Expiration Date",
+          "licenta_comunitara_numar": "Community License Number",
+          "licenta_comunitara_data_expirare": "Community License Expiration Date",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "adr": {
+        "title": "ADR Certification",
+        "description": "Enter ADR hazardous materials certification details",
+        "data": {
+          "adr_certificat_numar": "Certificate Number",
+          "adr_certificat_data_expirare": "Certificate Expiration Date",
+          "adr_clase": "Hazard Classes",
+          "adr_consilier_nume": "Safety Advisor Name",
+          "adr_consilier_certificat": "Safety Advisor Certificate Number",
+          "adr_consilier_data_expirare": "Safety Advisor Certificate Expiration Date",
+          "adr_echipament_complet": "Equipment Complete"
+        }
+      },
+      "tahograf": {
+        "title": "Tachograph",
+        "description": "Enter tachograph details",
+        "data": {
+          "tahograf_tip": "Tachograph Type",
+          "tahograf_data_verificare": "Last Inspection Date",
+          "tahograf_data_urmatoare_verificare": "Next Inspection Date",
+          "tahograf_data_calibrare": "Last Calibration Date"
+        }
+      },
+      "combustibil_adblue": {
+        "title": "Fuel & AdBlue",
+        "description": "Enter fuel and AdBlue tank information",
+        "data": {
+          "combustibil_capacitate": "Fuel Tank Capacity (liters)",
+          "combustibil_nivel": "Current Fuel Level (liters)",
+          "combustibil_consum_mediu": "Average Consumption (L/100km)",
+          "adblue_capacitate": "AdBlue Tank Capacity (liters)",
+          "adblue_nivel": "Current AdBlue Level (liters)",
+          "alimentare_data": "Refueling Date",
+          "alimentare_litri": "Refueling Amount (liters)",
+          "alimentare_pret_litru": "Price per Liter (RON)",
+          "alimentare_cost": "Refueling Cost (RON)",
+          "alimentare_km": "Mileage at Refueling",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "mentenanta": {
+        "title": "Maintenance",
+        "description": "Select maintenance category",
+        "menu_options": {
+          "revizie_ulei": "Oil Change",
+          "distributie": "Timing Belt",
+          "anvelope": "Tires",
+          "baterie": "Battery",
+          "frane": "Brakes",
+          "dpf": "DPF Cleaning",
+          "turbo": "Turbo Service",
+          "trusa_prim_ajutor": "First Aid Kit",
+          "extinctor": "Fire Extinguisher"
+        }
+      },
+      "revizie_ulei": {
+        "title": "Oil Change",
+        "description": "Enter oil change details",
+        "data": {
+          "revizie_ulei_km_ultimul": "Last Oil Change (km)",
+          "revizie_ulei_km_urmator": "Next Oil Change (km)",
+          "revizie_ulei_data": "Last Oil Change Date",
+          "revizie_ulei_cost": "Oil Change Cost (RON)",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "distributie": {
+        "title": "Timing Belt",
+        "description": "Enter timing belt service details",
+        "data": {
+          "distributie_km_ultimul": "Last Service (km)",
+          "distributie_km_urmator": "Next Service (km)",
+          "distributie_data": "Last Service Date",
+          "distributie_cost": "Service Cost (RON)",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "anvelope": {
+        "title": "Tires",
+        "description": "Enter tire information",
+        "data": {
+          "anvelope_vara_data": "Summer Tires Installation Date",
+          "anvelope_iarna_data": "Winter Tires Installation Date",
+          "anvelope_cost": "Tire Set Cost (RON)",
+          "anvelope_dot": "DOT Code",
+          "anvelope_tip": "Tire Type",
+          "anvelope_nr_resapari": "Number of Treads",
+          "anvelope_km_montare": "Mileage at Installation",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "baterie": {
+        "title": "Battery",
+        "description": "Enter battery replacement details",
+        "data": {
+          "baterie_data_schimb": "Replacement Date",
+          "baterie_cost": "Battery Cost (RON)",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "frane": {
+        "title": "Brakes",
+        "description": "Enter brake pads and brake discs details.",
+        "data": {
+          "placute_frana_km_ultimul": "Brake pads – Km at last replacement",
+          "placute_frana_km_urmator": "Brake pads – Km at next replacement",
+          "placute_frana_data": "Brake pads – Date of replacement",
+          "placute_frana_cost": "Brake pads – Cost (RON)",
+          "discuri_frana_km_ultimul": "Brake discs – Km at last replacement",
+          "discuri_frana_km_urmator": "Brake discs – Km at next replacement",
+          "discuri_frana_data": "Brake discs – Date of replacement",
+          "discuri_frana_cost": "Brake discs – Cost (RON)",
+          "_arhivare_date": "Archive old data before saving"
+        }
+      },
+      "dpf": {
+        "title": "DPF Cleaning",
+        "description": "Enter DPF service details",
+        "data": {
+          "dpf_data_curatare": "Last Cleaning Date",
+          "dpf_km_curatare": "Last Cleaning (km)",
+          "dpf_cost": "DPF Cleaning Cost (RON)",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "turbo": {
+        "title": "Turbo Service",
+        "description": "Enter turbo maintenance details",
+        "data": {
+          "turbo_data_revizie": "Last Service Date",
+          "turbo_km_revizie": "Last Service (km)",
+          "turbo_cost": "Service Cost (RON)",
+          "_arhivare_date": "Archive old entries"
+        }
+      },
+      "trusa_prim_ajutor": {
+        "title": "First Aid Kit",
+        "description": "Enter first aid kit expiration date",
+        "data": {
+          "trusa_prim_ajutor_data_expirare": "Expiration Date"
+        }
+      },
+      "extinctor": {
+        "title": "Fire Extinguisher",
+        "description": "Enter fire extinguisher details",
+        "data": {
+          "extinctor_data_expirare": "Expiration Date",
+          "extinctor_capacitate": "Capacity (kg)"
+        }
+      },
+      "remorca": {
+        "title": "Trailer Information",
+        "description": "Enter trailer details",
+        "data": {
+          "remorca_nr_inmatriculare": "Trailer Registration Number",
+          "remorca_tip": "Trailer Type",
+          "remorca_marca": "Trailer Brand",
+          "remorca_mma": "Maximum Authorized Mass (kg)",
+          "remorca_masa_proprie": "Tare Weight (kg)",
+          "remorca_nr_axe": "Number of Axles",
+          "remorca_an_fabricatie": "Year of Manufacture",
+          "remorca_itp_data_expirare": "ITP Expiration Date",
+          "remorca_rca_data_expirare": "RCA Expiration Date",
+          "remorca_rovinieta_data_sfarsit": "Vignette Expiration Date"
+        }
+      },
+      "costuri": {
+        "title": "Costs",
+        "description": "Select cost category",
+        "menu_options": {
+          "taxe_drum": "Road Taxes",
+          "amenzi": "Fines"
+        }
+      },
+      "taxe_drum": {
+        "title": "Road Taxes",
+        "description": "Enter road tax details",
+        "data": {
+          "taxa_drum_tara": "Country",
+          "taxa_drum_suma": "Tax Amount",
+          "taxa_drum_valuta": "Currency",
+          "taxa_drum_data": "Payment Date"
+        }
+      },
+      "amenzi": {
+        "title": "Fines",
+        "description": "Enter fine details",
+        "data": {
+          "amenda_suma": "Fine Amount (RON)",
+          "amenda_motiv": "Reason",
+          "amenda_tara": "Country",
+          "amenda_data": "Fine Date",
+          "amenda_status": "Payment Status"
+        }
+      },
+      "kilometraj": {
+        "title": "Mileage & Engine Hours",
+        "description": "Enter current mileage and engine operating hours",
+        "data": {
+          "km_curent": "Current Mileage (km)",
+          "ore_motor": "Engine Operating Hours"
+        }
+      },
+      "licenta": {
+        "title": "Fleet License",
+        "description": "{license_status}\n\nEnter your license key to activate or renew the integration.",
+        "data": {
+          "license_key": "License Key"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "informatii": {
+        "name": "Vehicle Information"
+      },
+      "kilometraj": {
+        "name": "Mileage"
+      },
+      "ore_motor": {
+        "name": "Engine Hours"
+      },
+      "rca": {
+        "name": "RCA Insurance"
+      },
+      "casco": {
+        "name": "CASCO Insurance"
+      },
+      "itp": {
+        "name": "ITP Inspection"
+      },
+      "rovinieta": {
+        "name": "Vignette"
+      },
+      "impozit": {
+        "name": "Vehicle Tax"
+      },
+      "leasing": {
+        "name": "Leasing Contract"
+      },
+      "revizie_ulei": {
+        "name": "Oil Change"
+      },
+      "distributie": {
+        "name": "Timing Belt"
+      },
+      "anvelope": {
+        "name": "Tires"
+      },
+      "baterie": {
+        "name": "Battery"
+      },
+      "placute_frana": {
+        "name": "Brake Pads"
+      },
+      "discuri_frana": {
+        "name": "Brake Discs"
+      },
+      "trusa_prim_ajutor": {
+        "name": "First Aid Kit"
+      },
+      "extinctor": {
+        "name": "Fire Extinguisher"
+      },
+      "cost_total": {
+        "name": "Total Costs"
+      },
+      "sofer": {
+        "name": "Driver Information"
+      },
+      "sofer_permis": {
+        "name": "Driver License"
+      },
+      "sofer_cpc": {
+        "name": "CPC Certificate"
+      },
+      "sofer_card_tahograf": {
+        "name": "Tachograph Card"
+      },
+      "sofer_fisa_medicala": {
+        "name": "Medical Examination"
+      },
+      "sofer_fisa_psihologica": {
+        "name": "Psychological Examination"
+      },
+      "licenta_transport": {
+        "name": "Transport License"
+      },
+      "copie_conforma": {
+        "name": "Certified Copy"
+      },
+      "licenta_comunitara": {
+        "name": "Community License"
+      },
+      "adr_certificat": {
+        "name": "ADR Certificate"
+      },
+      "tahograf": {
+        "name": "Tachograph"
+      },
+      "combustibil": {
+        "name": "Fuel Tank"
+      },
+      "alimentare": {
+        "name": "Refueling Records"
+      },
+      "dpf": {
+        "name": "DPF Filter"
+      },
+      "turbo": {
+        "name": "Turbo"
+      },
+      "remorca": {
+        "name": "Trailer Information"
+      },
+      "remorca_itp": {
+        "name": "Trailer ITP"
+      },
+      "remorca_rca": {
+        "name": "Trailer RCA"
+      },
+      "remorca_rovinieta": {
+        "name": "Trailer Vignette"
+      }
+    }
+  },
+  "selector": {
+    "combustibil": {
+      "options": {
+        "benzina": "Gasoline",
+        "diesel": "Diesel",
+        "hybrid": "Hybrid",
+        "electric": "Electric",
+        "gpl": "LPG",
+        "cng": "CNG",
+        "lng": "LNG"
+      }
+    },
+    "tip_proprietate": {
+      "options": {
+        "proprietate": "Ownership",
+        "leasing": "Leasing",
+        "leasing_operational": "Operational Leasing",
+        "inchiriere": "Rental",
+        "subcontractat": "Subcontracted"
+      }
+    },
+    "tip_vehicul": {
+      "options": {
+        "autotractor": "Tractor Unit",
+        "autocamion": "Truck",
+        "autobuz": "Bus",
+        "remorca": "Trailer",
+        "semiremorca": "Semi-trailer",
+        "utilitara": "Van"
+      }
+    },
+    "categorie_euro": {
+      "options": {
+        "euro_3": "Euro 3",
+        "euro_4": "Euro 4",
+        "euro_5": "Euro 5",
+        "euro_6": "Euro 6",
+        "euro_6d": "Euro 6d"
+      }
+    },
+    "tip_suspensie": {
+      "options": {
+        "pneumatica": "Air Suspension",
+        "mecanica": "Mechanical Suspension"
+      }
+    },
+    "tahograf_tip": {
+      "options": {
+        "analog": "Analog",
+        "digital": "Digital",
+        "smart_v1": "Smart Tachograph v1",
+        "smart_v2": "Smart Tachograph v2"
+      }
+    },
+    "cpc_tip": {
+      "options": {
+        "marfa": "Goods Transport",
+        "persoane": "Passenger Transport"
+      }
+    },
+    "sofer_apt": {
+      "options": {
+        "apt": "Fit",
+        "inapt": "Unfit",
+        "restrictii": "Fit with Restrictions"
+      }
+    },
+    "remorca_tip": {
+      "options": {
+        "semiremorca": "Semi-trailer",
+        "remorca": "Trailer",
+        "cisterna": "Tanker",
+        "frigorifica": "Refrigerated",
+        "platforma": "Platform",
+        "prelata": "Tarpaulin",
+        "basculanta": "Tipper"
+      }
+    },
+    "anvelope_tip": {
+      "options": {
+        "steer": "Steer",
+        "drive": "Drive",
+        "trailer": "Trailer",
+        "all_position": "All Position"
+      }
+    },
+    "amenda_status": {
+      "options": {
+        "platita": "Paid",
+        "neplatita": "Unpaid",
+        "contestata": "Contested"
+      }
+    },
+    "taxa_drum_tara": {
+      "options": {
+        "ro": "Romania",
+        "hu": "Hungary",
+        "at": "Austria",
+        "de": "Germany",
+        "bg": "Bulgaria",
+        "cz": "Czech Republic",
+        "pl": "Poland",
+        "sk": "Slovakia",
+        "si": "Slovenia",
+        "hr": "Croatia",
+        "it": "Italy",
+        "fr": "France",
+        "es": "Spain",
+        "be": "Belgium",
+        "nl": "Netherlands",
+        "ch": "Switzerland"
+      }
+    },
+    "valuta": {
+      "options": {
+        "ron": "Romanian Leu",
+        "eur": "Euro",
+        "huf": "Hungarian Forint",
+        "bgn": "Bulgarian Lev",
+        "czk": "Czech Koruna",
+        "pln": "Polish Zloty"
+      }
+    }
+  },
+  "services": {
+    "actualizeaza_date": {
+      "name": "Update Data",
+      "description": "Update vehicle mileage",
+      "fields": {
+        "nr_inmatriculare": {
+          "name": "Registration Number",
+          "description": "Vehicle registration number (e.g.: B123ABC)"
+        },
+        "km_curent": {
+          "name": "Current Mileage",
+          "description": "Current vehicle mileage"
+        }
+      }
+    },
+    "exporta_date": {
+      "name": "Export Data",
+      "description": "Export vehicle data to a JSON file",
+      "fields": {
+        "nr_inmatriculare": {
+          "name": "Registration Number",
+          "description": "Vehicle registration number to export"
+        }
+      }
+    },
+    "importa_date": {
+      "name": "Import Data",
+      "description": "Import vehicle data from a JSON file",
+      "fields": {
+        "cale_fisier": {
+          "name": "File Path",
+          "description": "Path to the import file (e.g.: /config/fleet_backup_b123abc.json)"
+        }
+      }
+    },
+    "backup_flota": {
+      "name": "Fleet Backup",
+      "description": "Backup all configured vehicles to a single ZIP archive in /config/fleet_backups/"
+    },
+    "restore_flota": {
+      "name": "Fleet Restore",
+      "description": "Restore all vehicles from a ZIP backup archive. Existing vehicles are updated, new ones are created automatically.",
+      "fields": {
+        "cale_fisier": {
+          "name": "File Path",
+          "description": "Path to the backup ZIP file (e.g.: /config/fleet_backups/fleet_backup_20260318_120000.zip)"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "domain": "fleet",
+  "name": "Manager de flotă",
+  "codeowners": [
+    "@cnecrea"
+  ],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/cnecrea/fleet",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/cnecrea/fleet/issues",
+  "requirements": [],
+  "version": "0.0.0"
+}

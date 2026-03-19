@@ -1,0 +1,684 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Adaugă vehicul transport",
+        "description": "Introdu numărul de înmatriculare al vehiculului, fără spații sau cratime (ex: B123ABC). Restul datelor pot fi adăugate ulterior din setările integrării.",
+        "data": {
+          "nr_inmatriculare": "Număr de înmatriculare"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Acest vehicul este deja configurat."
+    },
+    "error": {
+      "numar_gol": "Numărul de înmatriculare nu poate fi gol.",
+      "format_numar_invalid": "Format invalid. Introdu numărul fără spații, cratime sau alte caractere speciale (ex: B123ABC).",
+      "format_data_invalid": "Format de dată invalid. Folosește formatul ZZ.LL.AAAA (ex: 18.04.2026).",
+      "an_invalid": "An invalid. Introdu un an valid de 4 cifre."
+    }
+  },
+  "options": {
+    "error": {
+      "format_data_invalid": "Format de dată invalid. Folosește formatul ZZ.LL.AAAA (ex: 18.04.2026).",
+      "an_invalid": "An invalid. Introdu un an valid de 4 cifre (verifică intervalul permis).",
+      "km_necesar": "Trebuie să configurezi mai întâi kilometrajul actual al vehiculului (meniu principal → Actualizare kilometraj).",
+      "license_key_empty": "Introdu o cheie de licență.",
+      "license_key_invalid": "Cheie de licență invalidă. Verifică formatul și încearcă din nou.",
+      "license_already_used": "Această cheie de licență a fost deja folosită pe altă instalare.",
+      "license_key_expired": "Această cheie de licență a expirat.",
+      "license_fingerprint_mismatch": "Această cheie de licență este asociată altei instalări.",
+      "license_network_error": "Nu se poate conecta la serverul de licențe. Verifică conexiunea la internet.",
+      "license_server_error": "Eroare server licențe. Încearcă din nou mai târziu."
+    },
+    "step": {
+      "init": {
+        "title": "Gestionare flotă",
+        "description": "Selectează categoria de gestionat",
+        "menu_options": {
+          "identificare": "Identificare vehicul",
+          "sofer": "Informații șofer",
+          "rca": "Asigurare RCA",
+          "casco": "Asigurare CASCO",
+          "itp": "Inspecție ITP",
+          "rovinieta": "Rovinietă",
+          "administrativ": "Administrativ",
+          "licente": "Licențe transport",
+          "adr": "Certificare ADR",
+          "tahograf": "Tahograf",
+          "combustibil_adblue": "Combustibil & AdBlue",
+          "mentenanta": "Mentenanță",
+          "remorca": "Informații remorcă",
+          "costuri": "Costuri",
+          "kilometraj": "Kilometraj & Ore motor",
+          "licenta": "Licență"
+        }
+      },
+      "identificare": {
+        "title": "Identificare vehicul",
+        "description": "Completează datele de identificare ale vehiculului. Toate câmpurile sunt opționale.",
+        "data": {
+          "marca": "Marcă / Producător",
+          "model": "Model",
+          "vin": "VIN (Vehicle Identification Number)",
+          "serie_civ": "Serie certificat de înmatriculare",
+          "an_fabricatie": "An fabricație",
+          "an_prima_inmatriculare": "An prima înmatriculare",
+          "motorizare": "Descriere motorizare",
+          "combustibil": "Tip combustibil",
+          "capacitate_cilindrica": "Capacitate cilindrică (cc)",
+          "putere_kw": "Putere (kW)",
+          "putere_cp": "Putere (CP)",
+          "tip_vehicul": "Tip vehicul",
+          "mma": "Masa maximă autorizată (kg)",
+          "masa_proprie": "Masa proprie (kg)",
+          "nr_axe": "Număr de axe",
+          "categorie_euro": "Categorie Euro",
+          "tip_suspensie": "Tip suspensie"
+        }
+      },
+      "sofer": {
+        "title": "Informații șofer",
+        "description": "Introdu detaliile șoferului și documentele",
+        "data": {
+          "sofer_nume": "Nume șofer",
+          "sofer_cnp": "CNP (Cod Numeric Personal)",
+          "sofer_nr_permis": "Număr permis de conducere",
+          "sofer_categorii_permis": "Categorii permis",
+          "sofer_data_expirare_permis": "Data expirare permis",
+          "sofer_cpc_numar": "Număr CPC",
+          "sofer_cpc_data_expirare": "Data expirare CPC",
+          "sofer_cpc_tip": "Tip CPC",
+          "sofer_card_tahograf_numar": "Număr card tahograf",
+          "sofer_card_tahograf_data_expirare": "Data expirare card tahograf",
+          "sofer_atestat_adr_numar": "Număr atestat ADR",
+          "sofer_atestat_adr_data_expirare": "Data expirare atestat ADR",
+          "sofer_atestat_adr_clase": "Clase ADR",
+          "sofer_fisa_medicala_data": "Data examen medical",
+          "sofer_fisa_medicala_data_expirare": "Data expirare fișă medicală",
+          "sofer_fisa_medicala_apt": "Stare aptitudine medicală",
+          "sofer_fisa_psihologica_data": "Data examen psihologic",
+          "sofer_fisa_psihologica_data_expirare": "Data expirare fișă psihologică"
+        }
+      },
+      "rca": {
+        "title": "Asigurare RCA",
+        "description": "Introdu detaliile asigurării RCA",
+        "data": {
+          "rca_numar_polita": "Număr poliță",
+          "rca_companie": "Companie asigurare",
+          "rca_data_emitere": "Data emitere",
+          "rca_data_expirare": "Data expirare",
+          "rca_cost": "Primă anuală (RON)",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "casco": {
+        "title": "Asigurare CASCO",
+        "description": "Introdu detaliile asigurării CASCO",
+        "data": {
+          "casco_numar_polita": "Număr poliță",
+          "casco_companie": "Companie asigurare",
+          "casco_data_emitere": "Data emitere",
+          "casco_data_expirare": "Data expirare",
+          "casco_cost": "Primă anuală (RON)",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "itp": {
+        "title": "Inspecție ITP",
+        "description": "Introdu detaliile inspecției tehnice periodice",
+        "data": {
+          "itp_data_expirare": "Data expirare",
+          "itp_statie": "Stație de inspecție",
+          "itp_kilometraj": "Kilometraj la inspecție",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "rovinieta": {
+        "title": "Rovinietă",
+        "description": "Introdu detaliile rovinietei",
+        "data": {
+          "rovinieta_data_inceput": "Data început",
+          "rovinieta_data_sfarsit": "Data sfârșit",
+          "rovinieta_categorie": "Categorie vehicul",
+          "rovinieta_pret": "Preț (RON)",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "administrativ": {
+        "title": "Administrativ",
+        "description": "Introdu detaliile administrative",
+        "data": {
+          "proprietar": "Nume proprietar",
+          "tip_proprietate": "Tip proprietate",
+          "impozit_suma": "Sumă impozit (RON)",
+          "impozit_scadenta": "Data scadență impozit",
+          "impozit_localitate": "Localitate impozit",
+          "leasing_data_expirare": "Data expirare leasing"
+        }
+      },
+      "leasing_data": {
+        "title": "Informații leasing",
+        "description": "Introdu detaliile contractului de leasing",
+        "data": {
+          "leasing_data_expirare": "Data expirare contract leasing"
+        }
+      },
+      "licente": {
+        "title": "Licențe transport",
+        "description": "Introdu detaliile licențelor",
+        "data": {
+          "licenta_transport_numar": "Număr licență transport",
+          "licenta_transport_tip": "Tip licență transport",
+          "licenta_transport_data_expirare": "Data expirare licență transport",
+          "copie_conforma_numar": "Număr copie conformă",
+          "copie_conforma_data_expirare": "Data expirare copie conformă",
+          "licenta_comunitara_numar": "Număr licență comunitară",
+          "licenta_comunitara_data_expirare": "Data expirare licență comunitară",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "adr": {
+        "title": "Certificare ADR",
+        "description": "Introdu detaliile certificării ADR pentru mărfuri periculoase",
+        "data": {
+          "adr_certificat_numar": "Număr certificat",
+          "adr_certificat_data_expirare": "Data expirare certificat",
+          "adr_clase": "Clase de pericol",
+          "adr_consilier_nume": "Nume consilier de siguranță",
+          "adr_consilier_certificat": "Număr certificat consilier",
+          "adr_consilier_data_expirare": "Data expirare certificat consilier",
+          "adr_echipament_complet": "Echipament complet"
+        }
+      },
+      "tahograf": {
+        "title": "Tahograf",
+        "description": "Introdu detaliile tahografului",
+        "data": {
+          "tahograf_tip": "Tip tahograf",
+          "tahograf_data_verificare": "Data ultimei verificări",
+          "tahograf_data_urmatoare_verificare": "Data următoarei verificări",
+          "tahograf_data_calibrare": "Data ultimei calibrări"
+        }
+      },
+      "combustibil_adblue": {
+        "title": "Combustibil & AdBlue",
+        "description": "Introdu informațiile despre rezervoare și alimentări",
+        "data": {
+          "combustibil_capacitate": "Capacitate rezervor combustibil (litri)",
+          "combustibil_nivel": "Nivel curent combustibil (litri)",
+          "combustibil_consum_mediu": "Consum mediu (L/100km)",
+          "adblue_capacitate": "Capacitate rezervor AdBlue (litri)",
+          "adblue_nivel": "Nivel curent AdBlue (litri)",
+          "alimentare_data": "Data alimentare",
+          "alimentare_litri": "Cantitate alimentare (litri)",
+          "alimentare_pret_litru": "Preț pe litru (RON)",
+          "alimentare_cost": "Cost alimentare (RON)",
+          "alimentare_km": "Kilometraj la alimentare",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "mentenanta": {
+        "title": "Mentenanță",
+        "description": "Selectează categoria de mentenanță",
+        "menu_options": {
+          "revizie_ulei": "Schimb ulei",
+          "distributie": "Distribuție",
+          "anvelope": "Anvelope",
+          "baterie": "Baterie",
+          "frane": "Frâne",
+          "dpf": "Curățare DPF",
+          "turbo": "Service turbo",
+          "trusa_prim_ajutor": "Trusă de prim ajutor",
+          "extinctor": "Extinctor"
+        }
+      },
+      "revizie_ulei": {
+        "title": "Schimb ulei",
+        "description": "Introdu detaliile schimbului de ulei",
+        "data": {
+          "revizie_ulei_km_ultimul": "Ultimul schimb ulei (km)",
+          "revizie_ulei_km_urmator": "Următorul schimb ulei (km)",
+          "revizie_ulei_data": "Data ultimului schimb ulei",
+          "revizie_ulei_cost": "Cost schimb ulei (RON)",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "distributie": {
+        "title": "Distribuție",
+        "description": "Introdu detaliile serviciului de distribuție",
+        "data": {
+          "distributie_km_ultimul": "Ultima schimbare (km)",
+          "distributie_km_urmator": "Următoarea schimbare (km)",
+          "distributie_data": "Data ultimei schimbări",
+          "distributie_cost": "Cost service (RON)",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "anvelope": {
+        "title": "Anvelope",
+        "description": "Introdu informațiile despre anvelope",
+        "data": {
+          "anvelope_vara_data": "Data montare anvelope vară",
+          "anvelope_iarna_data": "Data montare anvelope iarnă",
+          "anvelope_cost": "Cost set anvelope (RON)",
+          "anvelope_dot": "Cod DOT",
+          "anvelope_tip": "Tip anvelopă",
+          "anvelope_nr_resapari": "Număr de reșapări",
+          "anvelope_km_montare": "Kilometraj la montare",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "baterie": {
+        "title": "Baterie",
+        "description": "Introdu detaliile înlocuirii bateriei",
+        "data": {
+          "baterie_data_schimb": "Data înlocuire",
+          "baterie_cost": "Cost baterie (RON)",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "frane": {
+        "title": "Frâne",
+        "description": "Introdu detaliile plăcuțelor și discurilor de frână.",
+        "data": {
+          "placute_frana_km_ultimul": "Plăcuțe frână – Km la ultima schimbare",
+          "placute_frana_km_urmator": "Plăcuțe frână – Km la următoarea schimbare",
+          "placute_frana_data": "Plăcuțe frână – Data schimbării",
+          "placute_frana_cost": "Plăcuțe frână – Cost (RON)",
+          "discuri_frana_km_ultimul": "Discuri frână – Km la ultima schimbare",
+          "discuri_frana_km_urmator": "Discuri frână – Km la următoarea schimbare",
+          "discuri_frana_data": "Discuri frână – Data schimbării",
+          "discuri_frana_cost": "Discuri frână – Cost (RON)",
+          "_arhivare_date": "Arhivează datele vechi înainte de salvare"
+        }
+      },
+      "dpf": {
+        "title": "Curățare DPF",
+        "description": "Introdu detaliile serviciului DPF",
+        "data": {
+          "dpf_data_curatare": "Data ultimei curățări",
+          "dpf_km_curatare": "Km la ultima curățare",
+          "dpf_cost": "Cost curățare DPF (RON)",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "turbo": {
+        "title": "Service turbo",
+        "description": "Introdu detaliile mentenanței turbosuflantei",
+        "data": {
+          "turbo_data_revizie": "Data ultimei revizii",
+          "turbo_km_revizie": "Km la ultima revizie",
+          "turbo_cost": "Cost service (RON)",
+          "_arhivare_date": "Arhivează intrările vechi"
+        }
+      },
+      "trusa_prim_ajutor": {
+        "title": "Trusă de prim ajutor",
+        "description": "Introdu data de expirare a trusei de prim ajutor",
+        "data": {
+          "trusa_prim_ajutor_data_expirare": "Data expirare"
+        }
+      },
+      "extinctor": {
+        "title": "Extinctor",
+        "description": "Introdu detaliile extinctorului",
+        "data": {
+          "extinctor_data_expirare": "Data expirare",
+          "extinctor_capacitate": "Capacitate (kg)"
+        }
+      },
+      "remorca": {
+        "title": "Informații remorcă",
+        "description": "Introdu detaliile remorcii",
+        "data": {
+          "remorca_nr_inmatriculare": "Număr înmatriculare remorcă",
+          "remorca_tip": "Tip remorcă",
+          "remorca_marca": "Marcă remorcă",
+          "remorca_mma": "Masa maximă autorizată (kg)",
+          "remorca_masa_proprie": "Masa proprie (kg)",
+          "remorca_nr_axe": "Număr de axe",
+          "remorca_an_fabricatie": "An fabricație",
+          "remorca_itp_data_expirare": "Data expirare ITP",
+          "remorca_rca_data_expirare": "Data expirare RCA",
+          "remorca_rovinieta_data_sfarsit": "Data expirare rovinietă"
+        }
+      },
+      "costuri": {
+        "title": "Costuri",
+        "description": "Selectează categoria de costuri",
+        "menu_options": {
+          "taxe_drum": "Taxe de drum",
+          "amenzi": "Amenzi"
+        }
+      },
+      "taxe_drum": {
+        "title": "Taxe de drum",
+        "description": "Introdu detaliile taxelor de drum",
+        "data": {
+          "taxa_drum_tara": "Țara",
+          "taxa_drum_suma": "Sumă taxă",
+          "taxa_drum_valuta": "Valută",
+          "taxa_drum_data": "Data plății"
+        }
+      },
+      "amenzi": {
+        "title": "Amenzi",
+        "description": "Introdu detaliile amenzii",
+        "data": {
+          "amenda_suma": "Sumă amendă (RON)",
+          "amenda_motiv": "Motiv",
+          "amenda_tara": "Țara",
+          "amenda_data": "Data amenzii",
+          "amenda_status": "Status plată"
+        }
+      },
+      "kilometraj": {
+        "title": "Kilometraj & Ore motor",
+        "description": "Introdu kilometrajul curent și orele de funcționare motor",
+        "data": {
+          "km_curent": "Kilometraj curent (km)",
+          "ore_motor": "Ore funcționare motor"
+        }
+      },
+      "licenta": {
+        "title": "Licență Fleet",
+        "description": "{license_status}\n\nIntrodu cheia de licență pentru a activa sau reînnoi integrarea.",
+        "data": {
+          "license_key": "Cheie de licență"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "informatii": {
+        "name": "Informații vehicul"
+      },
+      "kilometraj": {
+        "name": "Kilometraj"
+      },
+      "ore_motor": {
+        "name": "Ore motor"
+      },
+      "rca": {
+        "name": "Asigurare RCA"
+      },
+      "casco": {
+        "name": "Asigurare CASCO"
+      },
+      "itp": {
+        "name": "Inspecție ITP"
+      },
+      "rovinieta": {
+        "name": "Rovinietă"
+      },
+      "impozit": {
+        "name": "Impozit vehicul"
+      },
+      "leasing": {
+        "name": "Contract leasing"
+      },
+      "revizie_ulei": {
+        "name": "Schimb ulei"
+      },
+      "distributie": {
+        "name": "Distribuție"
+      },
+      "anvelope": {
+        "name": "Anvelope"
+      },
+      "baterie": {
+        "name": "Baterie"
+      },
+      "placute_frana": {
+        "name": "Plăcuțe frână"
+      },
+      "discuri_frana": {
+        "name": "Discuri frână"
+      },
+      "trusa_prim_ajutor": {
+        "name": "Trusă de prim ajutor"
+      },
+      "extinctor": {
+        "name": "Extinctor"
+      },
+      "cost_total": {
+        "name": "Costuri totale"
+      },
+      "sofer": {
+        "name": "Informații șofer"
+      },
+      "sofer_permis": {
+        "name": "Permis conducere"
+      },
+      "sofer_cpc": {
+        "name": "Certificat CPC"
+      },
+      "sofer_card_tahograf": {
+        "name": "Card tahograf"
+      },
+      "sofer_fisa_medicala": {
+        "name": "Fișă medicală"
+      },
+      "sofer_fisa_psihologica": {
+        "name": "Fișă psihologică"
+      },
+      "licenta_transport": {
+        "name": "Licență transport"
+      },
+      "copie_conforma": {
+        "name": "Copie conformă"
+      },
+      "licenta_comunitara": {
+        "name": "Licență comunitară"
+      },
+      "adr_certificat": {
+        "name": "Certificat ADR"
+      },
+      "tahograf": {
+        "name": "Tahograf"
+      },
+      "combustibil": {
+        "name": "Rezervor combustibil"
+      },
+      "alimentare": {
+        "name": "Înregistrări alimentare"
+      },
+      "dpf": {
+        "name": "Filtru DPF"
+      },
+      "turbo": {
+        "name": "Turbosuflantă"
+      },
+      "remorca": {
+        "name": "Informații remorcă"
+      },
+      "remorca_itp": {
+        "name": "ITP remorcă"
+      },
+      "remorca_rca": {
+        "name": "RCA remorcă"
+      },
+      "remorca_rovinieta": {
+        "name": "Rovinietă remorcă"
+      }
+    }
+  },
+  "selector": {
+    "combustibil": {
+      "options": {
+        "benzina": "Benzină",
+        "diesel": "Motorină",
+        "hybrid": "Hibrid",
+        "electric": "Electric",
+        "gpl": "GPL",
+        "cng": "CNG",
+        "lng": "LNG"
+      }
+    },
+    "tip_proprietate": {
+      "options": {
+        "proprietate": "Proprietate",
+        "leasing": "Leasing",
+        "leasing_operational": "Leasing operațional",
+        "inchiriere": "Închiriere",
+        "subcontractat": "Subcontractat"
+      }
+    },
+    "tip_vehicul": {
+      "options": {
+        "autotractor": "Autotractor",
+        "autocamion": "Autocamion",
+        "autobuz": "Autobuz",
+        "remorca": "Remorcă",
+        "semiremorca": "Semiremorcă",
+        "utilitara": "Utilitară"
+      }
+    },
+    "categorie_euro": {
+      "options": {
+        "euro_3": "Euro 3",
+        "euro_4": "Euro 4",
+        "euro_5": "Euro 5",
+        "euro_6": "Euro 6",
+        "euro_6d": "Euro 6d"
+      }
+    },
+    "tip_suspensie": {
+      "options": {
+        "pneumatica": "Suspensie pneumatică",
+        "mecanica": "Suspensie mecanică"
+      }
+    },
+    "tahograf_tip": {
+      "options": {
+        "analog": "Analog",
+        "digital": "Digital",
+        "smart_v1": "Tahograf inteligent v1",
+        "smart_v2": "Tahograf inteligent v2"
+      }
+    },
+    "cpc_tip": {
+      "options": {
+        "marfa": "Transport marfă",
+        "persoane": "Transport persoane"
+      }
+    },
+    "sofer_apt": {
+      "options": {
+        "apt": "Apt",
+        "inapt": "Inapt",
+        "restrictii": "Apt cu restricții"
+      }
+    },
+    "remorca_tip": {
+      "options": {
+        "semiremorca": "Semiremorcă",
+        "remorca": "Remorcă",
+        "cisterna": "Cisternă",
+        "frigorifica": "Frigorifică",
+        "platforma": "Platformă",
+        "prelata": "Prelată",
+        "basculanta": "Basculantă"
+      }
+    },
+    "anvelope_tip": {
+      "options": {
+        "steer": "Direcție (Steer)",
+        "drive": "Tracțiune (Drive)",
+        "trailer": "Remorcă (Trailer)",
+        "all_position": "Toate pozițiile"
+      }
+    },
+    "amenda_status": {
+      "options": {
+        "platita": "Plătită",
+        "neplatita": "Neplătită",
+        "contestata": "Contestată"
+      }
+    },
+    "taxa_drum_tara": {
+      "options": {
+        "ro": "România",
+        "hu": "Ungaria",
+        "at": "Austria",
+        "de": "Germania",
+        "bg": "Bulgaria",
+        "cz": "Cehia",
+        "pl": "Polonia",
+        "sk": "Slovacia",
+        "si": "Slovenia",
+        "hr": "Croația",
+        "it": "Italia",
+        "fr": "Franța",
+        "es": "Spania",
+        "be": "Belgia",
+        "nl": "Olanda",
+        "ch": "Elveția"
+      }
+    },
+    "valuta": {
+      "options": {
+        "ron": "Leu românesc",
+        "eur": "Euro",
+        "huf": "Forint maghiar",
+        "bgn": "Leva bulgărească",
+        "czk": "Coroană cehă",
+        "pln": "Zlot polonez"
+      }
+    }
+  },
+  "services": {
+    "actualizeaza_date": {
+      "name": "Actualizează date",
+      "description": "Actualizează kilometrajul vehiculului",
+      "fields": {
+        "nr_inmatriculare": {
+          "name": "Număr înmatriculare",
+          "description": "Numărul de înmatriculare al vehiculului (ex: B123ABC)"
+        },
+        "km_curent": {
+          "name": "Kilometraj curent",
+          "description": "Kilometrajul curent al vehiculului"
+        }
+      }
+    },
+    "exporta_date": {
+      "name": "Exportă date",
+      "description": "Exportă datele vehiculului într-un fișier JSON",
+      "fields": {
+        "nr_inmatriculare": {
+          "name": "Număr înmatriculare",
+          "description": "Numărul de înmatriculare al vehiculului de exportat"
+        }
+      }
+    },
+    "importa_date": {
+      "name": "Importă date",
+      "description": "Importă datele vehiculului dintr-un fișier JSON",
+      "fields": {
+        "cale_fisier": {
+          "name": "Cale fișier",
+          "description": "Calea către fișierul de import (ex: /config/fleet_backup_b123abc.json)"
+        }
+      }
+    },
+    "backup_flota": {
+      "name": "Backup flotă",
+      "description": "Salvează toate vehiculele configurate într-o singură arhivă ZIP în /config/fleet_backups/"
+    },
+    "restore_flota": {
+      "name": "Restaurare flotă",
+      "description": "Restaurează toate vehiculele dintr-o arhivă ZIP de backup. Vehiculele existente sunt actualizate, cele noi sunt create automat.",
+      "fields": {
+        "cale_fisier": {
+          "name": "Cale fișier",
+          "description": "Calea către arhiva ZIP de backup (ex: /config/fleet_backups/fleet_backup_20260318_120000.zip)"
+        }
+      }
+    }
+  }
+}

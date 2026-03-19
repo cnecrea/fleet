@@ -1,0 +1,269 @@
+{
+  "version": 2,
+  "integration": "fleet",
+  "nr_inmatriculare": "IS77GHI",
+  "data_export": "2026-03-18T08:15:00.000000",
+  "identificare": {
+    "marca": "Scania",
+    "model": "R450",
+    "vin": "XLER4X20005678901",
+    "serie_civ": "X-0076543",
+    "an_fabricatie": 2019,
+    "an_prima_inmatriculare": 2019,
+    "motorizare": "DC13 164 12.7L 450CP",
+    "combustibil": "diesel",
+    "capacitate_cilindrica": 12742,
+    "putere_kw": 331,
+    "putere_cp": 450,
+    "tip_vehicul": "autotractor",
+    "mma": 18000,
+    "masa_proprie": 7520,
+    "nr_axe": 2,
+    "categorie_euro": "euro_6",
+    "tip_suspensie": "pneumatica"
+  },
+  "kilometraj": {
+    "km_curent": 845200,
+    "ore_motor": 16900
+  },
+  "sofer": {
+    "nume": "Ciobanu Mihai",
+    "cnp": "1820110226789",
+    "nr_permis": "IS-789012",
+    "categorii_permis": "B, C, CE",
+    "data_expirare_permis": "2028-12-05",
+    "cpc_numar": "CPC-RO-2022-11223",
+    "cpc_data_expirare": "2027-07-20",
+    "cpc_tip": "marfa",
+    "card_tahograf_numar": "RO 0000078901 01",
+    "card_tahograf_data_expirare": "2027-09-30",
+    "atestat_adr_numar": "",
+    "atestat_adr_data_expirare": "",
+    "atestat_adr_clase": "",
+    "fisa_medicala_data": "2025-06-15",
+    "fisa_medicala_data_expirare": "2026-06-15",
+    "fisa_medicala_apt": "apt",
+    "fisa_psihologica_data": "2025-06-18",
+    "fisa_psihologica_data_expirare": "2027-06-18"
+  },
+  "asigurari": {
+    "rca": {
+      "numar_polita": "RCA-2025-SCA-077",
+      "companie": "City Insurance",
+      "data_emitere": "2025-09-01",
+      "data_expirare": "2026-09-01",
+      "cost": 3400
+    },
+    "casco": {
+      "numar_polita": "",
+      "companie": "",
+      "data_emitere": "",
+      "data_expirare": "",
+      "cost": 0
+    }
+  },
+  "documente": {
+    "itp": {
+      "data_expirare": "2026-11-20",
+      "statie": "RAR Iași",
+      "kilometraj": 820300
+    },
+    "rovinieta": {
+      "data_inceput": "2026-01-01",
+      "data_sfarsit": "2026-12-31",
+      "categorie": "A – peste 12t, max 3 axe",
+      "pret": 1296
+    },
+    "copie_conforma": {
+      "numar": "CC-IS-2023-0234",
+      "data_expirare": "2028-04-30"
+    }
+  },
+  "licente": {
+    "licenta_transport_numar": "LT-RO-2021-00567",
+    "licenta_transport_tip": "Transport marfă cont terți",
+    "licenta_transport_data_expirare": "2026-12-31",
+    "licenta_comunitara_numar": "LCOM-RO-2021-890",
+    "licenta_comunitara_data_expirare": "2026-12-31"
+  },
+  "administrativ": {
+    "proprietar": "Moldova Freight SRL",
+    "tip_proprietate": "proprietate",
+    "impozit_suma": 920,
+    "impozit_scadenta": "2026-03-31",
+    "impozit_localitate": "Iași",
+    "leasing_data_expirare": ""
+  },
+  "adr": {
+    "certificat_numar": "",
+    "certificat_data_expirare": "",
+    "clase": "",
+    "consilier_nume": "",
+    "consilier_certificat": "",
+    "consilier_data_expirare": "",
+    "echipament_complet": false
+  },
+  "tahograf": {
+    "tip": "smart_v1",
+    "data_verificare": "2025-05-10",
+    "data_urmatoare_verificare": "2027-05-10",
+    "data_calibrare": "2025-05-10"
+  },
+  "combustibil_adblue": {
+    "capacitate_rezervor": 400,
+    "nivel_combustibil": 95,
+    "consum_mediu": 30.2,
+    "adblue_capacitate": 70,
+    "adblue_nivel": 20,
+    "alimentare_data": "2026-03-15",
+    "alimentare_litri": 380,
+    "alimentare_pret_litru": 6.95,
+    "alimentare_cost": 2641.00,
+    "alimentare_km": 844800
+  },
+  "mentenanta": {
+    "revizie_ulei": {
+      "km_ultimul": 820000,
+      "km_urmator": 860000,
+      "data": "2026-01-25",
+      "cost": 2800
+    },
+    "distributie": {
+      "km_ultimul": 750000,
+      "km_urmator": 950000,
+      "data": "2025-05-10",
+      "cost": 8800
+    },
+    "anvelope": {
+      "data_vara": "2025-03-25",
+      "data_iarna": "2025-11-10",
+      "cost": 9800,
+      "dot": "2224",
+      "tip": "all_position",
+      "nr_resapari": 2,
+      "km_montare": 760000
+    },
+    "baterie": {
+      "data_schimb": "2024-12-10",
+      "cost": 1500
+    },
+    "frane": {
+      "placute_km_ultimul": 800000,
+      "placute_km_urmator": 900000,
+      "placute_data": "2025-11-05",
+      "placute_cost": 2000,
+      "discuri_km_ultimul": 750000,
+      "discuri_km_urmator": 950000,
+      "discuri_data": "2025-05-10",
+      "discuri_cost": 4200
+    },
+    "dpf": {
+      "data_curatare": "2025-09-15",
+      "km_curatare": 810000,
+      "cost": 1350
+    },
+    "turbo": {
+      "data_revizie": "2025-05-10",
+      "km_revizie": 750000,
+      "cost": 3500
+    }
+  },
+  "echipament": {
+    "trusa_prim_ajutor": {
+      "data_expirare": "2026-12-31"
+    },
+    "extinctor": {
+      "data_expirare": "2027-03-15",
+      "capacitate": 6
+    }
+  },
+  "remorca": {
+    "nr_inmatriculare": "IS33TRL",
+    "tip": "prelata",
+    "marca": "Wielton NS-3",
+    "mma": 38000,
+    "masa_proprie": 7400,
+    "nr_axe": 3,
+    "an_fabricatie": 2018,
+    "itp_data_expirare": "2026-11-20",
+    "rca_data_expirare": "2026-09-01",
+    "rovinieta_data_sfarsit": "2026-12-31"
+  },
+  "costuri_extinse": {
+    "taxe_drum": {
+      "tara": "bg",
+      "suma": 45.00,
+      "valuta": "BGN",
+      "data": "2026-02-28"
+    },
+    "amenzi": {
+      "suma": 800,
+      "motiv": "Lipsa triunghiuri reflectorizante",
+      "tara": "ro",
+      "data": "2025-11-22",
+      "status": "platita"
+    }
+  },
+  "istoric": {
+    "rca": [
+      {
+        "Număr poliță": "RCA-2024-SCA-077",
+        "Companie": "Euroins",
+        "Data emitere": "2024-09-01",
+        "Data expirare": "2025-09-01",
+        "Cost (RON)": 3100
+      },
+      {
+        "Număr poliță": "RCA-2023-SCA-077",
+        "Companie": "Euroins",
+        "Data emitere": "2023-09-05",
+        "Data expirare": "2024-09-05",
+        "Cost (RON)": 2800
+      }
+    ],
+    "rovinieta": [
+      {
+        "Data început": "2025-01-01",
+        "Data sfârșit": "2025-12-31",
+        "Categorie": "A – peste 12t, max 3 axe",
+        "Preț (RON)": 1200
+      }
+    ],
+    "revizie_ulei": [
+      {
+        "Km ultima revizie": 780000,
+        "Km următoarea revizie": 820000,
+        "Data": "2025-08-12",
+        "Cost (RON)": 2650
+      },
+      {
+        "Km ultima revizie": 740000,
+        "Km următoarea revizie": 780000,
+        "Data": "2025-03-20",
+        "Cost (RON)": 2600
+      },
+      {
+        "Km ultima revizie": 700000,
+        "Km următoarea revizie": 740000,
+        "Data": "2024-10-15",
+        "Cost (RON)": 2500
+      }
+    ],
+    "alimentare": [
+      {
+        "Data": "2026-03-12",
+        "Litri": 400,
+        "Preț/litru": 6.90,
+        "Cost total": 2760.00,
+        "Km la alimentare": 843900
+      },
+      {
+        "Data": "2026-03-07",
+        "Litri": 370,
+        "Preț/litru": 6.92,
+        "Cost total": 2560.40,
+        "Km la alimentare": 842600
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+# Servicii pentru integrarea Fleet
+actualizeaza_date:
+  fields:
+    nr_inmatriculare:
+      required: true
+      example: "B123ABC"
+      selector:
+        text:
+    km_curent:
+      required: true
+      example: 500000
+      selector:
+        number:
+          min: 0
+          max: 9999999
+          step: 1
+          unit_of_measurement: "km"
+          mode: box
+
+exporta_date:
+  fields:
+    nr_inmatriculare:
+      required: true
+      example: "B123ABC"
+      selector:
+        text:
+
+importa_date:
+  fields:
+    cale_fisier:
+      required: true
+      example: "/config/fleet_backup_b123abc.json"
+      selector:
+        text:
+
+backup_flota:
+
+restore_flota:
+  fields:
+    cale_fisier:
+      required: true
+      example: "/config/fleet_backups/fleet_backup_20260318_120000.zip"
+      selector:
+        text:

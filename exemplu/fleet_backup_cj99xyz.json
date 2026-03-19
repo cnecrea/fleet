@@ -1,0 +1,257 @@
+{
+  "version": 2,
+  "integration": "fleet",
+  "nr_inmatriculare": "CJ99XYZ",
+  "data_export": "2026-03-18T08:15:00.000000",
+  "identificare": {
+    "marca": "Volvo",
+    "model": "FH 460",
+    "vin": "YV2RT40A5LB654321",
+    "serie_civ": "X-0098765",
+    "an_fabricatie": 2020,
+    "an_prima_inmatriculare": 2020,
+    "motorizare": "D13K 12.8L 460CP",
+    "combustibil": "diesel",
+    "capacitate_cilindrica": 12777,
+    "putere_kw": 338,
+    "putere_cp": 460,
+    "tip_vehicul": "autotractor",
+    "mma": 18000,
+    "masa_proprie": 7650,
+    "nr_axe": 2,
+    "categorie_euro": "euro_6d",
+    "tip_suspensie": "pneumatica"
+  },
+  "kilometraj": {
+    "km_curent": 623100,
+    "ore_motor": 12450
+  },
+  "sofer": {
+    "nume": "Munteanu Andrei",
+    "cnp": "1900722125432",
+    "nr_permis": "CJ-654321",
+    "categorii_permis": "B, C, CE",
+    "data_expirare_permis": "2031-08-20",
+    "cpc_numar": "CPC-RO-2024-34567",
+    "cpc_data_expirare": "2029-05-15",
+    "cpc_tip": "marfa",
+    "card_tahograf_numar": "RO 0000034567 01",
+    "card_tahograf_data_expirare": "2029-01-25",
+    "atestat_adr_numar": "",
+    "atestat_adr_data_expirare": "",
+    "atestat_adr_clase": "",
+    "fisa_medicala_data": "2025-09-05",
+    "fisa_medicala_data_expirare": "2026-09-05",
+    "fisa_medicala_apt": "apt",
+    "fisa_psihologica_data": "2025-09-07",
+    "fisa_psihologica_data_expirare": "2027-09-07"
+  },
+  "asigurari": {
+    "rca": {
+      "numar_polita": "RCA-2026-VOL-099",
+      "companie": "Groupama",
+      "data_emitere": "2026-02-10",
+      "data_expirare": "2027-02-10",
+      "cost": 3900
+    },
+    "casco": {
+      "numar_polita": "CASCO-2025-VOL-055",
+      "companie": "Omniasig",
+      "data_emitere": "2025-08-01",
+      "data_expirare": "2026-08-01",
+      "cost": 7200
+    }
+  },
+  "documente": {
+    "itp": {
+      "data_expirare": "2027-06-15",
+      "statie": "RAR Cluj",
+      "kilometraj": 610200
+    },
+    "rovinieta": {
+      "data_inceput": "2026-01-01",
+      "data_sfarsit": "2026-12-31",
+      "categorie": "A – peste 12t, max 3 axe",
+      "pret": 1296
+    },
+    "copie_conforma": {
+      "numar": "CC-CJ-2024-0789",
+      "data_expirare": "2029-10-15"
+    }
+  },
+  "licente": {
+    "licenta_transport_numar": "LT-RO-2022-00789",
+    "licenta_transport_tip": "Transport marfă cont terți",
+    "licenta_transport_data_expirare": "2027-12-31",
+    "licenta_comunitara_numar": "LCOM-RO-2022-456",
+    "licenta_comunitara_data_expirare": "2027-12-31"
+  },
+  "administrativ": {
+    "proprietar": "Cargo Express Transilvania SRL",
+    "tip_proprietate": "proprietate",
+    "impozit_suma": 850,
+    "impozit_scadenta": "2026-03-31",
+    "impozit_localitate": "Cluj-Napoca",
+    "leasing_data_expirare": ""
+  },
+  "adr": {
+    "certificat_numar": "",
+    "certificat_data_expirare": "",
+    "clase": "",
+    "consilier_nume": "",
+    "consilier_certificat": "",
+    "consilier_data_expirare": "",
+    "echipament_complet": false
+  },
+  "tahograf": {
+    "tip": "smart_v2",
+    "data_verificare": "2025-11-20",
+    "data_urmatoare_verificare": "2027-11-20",
+    "data_calibrare": "2025-11-20"
+  },
+  "combustibil_adblue": {
+    "capacitate_rezervor": 450,
+    "nivel_combustibil": 180,
+    "consum_mediu": 26.8,
+    "adblue_capacitate": 60,
+    "adblue_nivel": 35,
+    "alimentare_data": "2026-03-16",
+    "alimentare_litri": 400,
+    "alimentare_pret_litru": 6.72,
+    "alimentare_cost": 2688.00,
+    "alimentare_km": 622800
+  },
+  "mentenanta": {
+    "revizie_ulei": {
+      "km_ultimul": 600000,
+      "km_urmator": 640000,
+      "data": "2026-01-15",
+      "cost": 2900
+    },
+    "distributie": {
+      "km_ultimul": 500000,
+      "km_urmator": 700000,
+      "data": "2025-06-20",
+      "cost": 9200
+    },
+    "anvelope": {
+      "data_vara": "2025-04-10",
+      "data_iarna": "2025-11-01",
+      "cost": 11400,
+      "dot": "2524",
+      "tip": "drive",
+      "nr_resapari": 1,
+      "km_montare": 580000
+    },
+    "baterie": {
+      "data_schimb": "2025-03-12",
+      "cost": 1650
+    },
+    "frane": {
+      "placute_km_ultimul": 570000,
+      "placute_km_urmator": 670000,
+      "placute_data": "2025-05-20",
+      "placute_cost": 2200,
+      "discuri_km_ultimul": 500000,
+      "discuri_km_urmator": 700000,
+      "discuri_data": "2025-06-20",
+      "discuri_cost": 4500
+    },
+    "dpf": {
+      "data_curatare": "2025-10-05",
+      "km_curatare": 590000,
+      "cost": 1400
+    },
+    "turbo": {
+      "data_revizie": "2025-06-20",
+      "km_revizie": 500000,
+      "cost": 1800
+    }
+  },
+  "echipament": {
+    "trusa_prim_ajutor": {
+      "data_expirare": "2027-04-30"
+    },
+    "extinctor": {
+      "data_expirare": "2028-01-15",
+      "capacitate": 6
+    }
+  },
+  "remorca": {
+    "nr_inmatriculare": "CJ07REM",
+    "tip": "frigorifica",
+    "marca": "Krone Cool Liner",
+    "mma": 36000,
+    "masa_proprie": 8100,
+    "nr_axe": 3,
+    "an_fabricatie": 2019,
+    "itp_data_expirare": "2027-06-15",
+    "rca_data_expirare": "2027-02-10",
+    "rovinieta_data_sfarsit": "2026-12-31"
+  },
+  "costuri_extinse": {
+    "taxe_drum": {
+      "tara": "at",
+      "suma": 124.30,
+      "valuta": "EUR",
+      "data": "2026-03-05"
+    },
+    "amenzi": {
+      "suma": 0,
+      "motiv": "",
+      "tara": "",
+      "data": "",
+      "status": ""
+    }
+  },
+  "istoric": {
+    "rca": [
+      {
+        "Număr poliță": "RCA-2025-VOL-099",
+        "Companie": "Groupama",
+        "Data emitere": "2025-02-10",
+        "Data expirare": "2026-02-10",
+        "Cost (RON)": 3600
+      },
+      {
+        "Număr poliță": "RCA-2024-VOL-099",
+        "Companie": "Allianz-Țiriac",
+        "Data emitere": "2024-02-15",
+        "Data expirare": "2025-02-15",
+        "Cost (RON)": 3200
+      }
+    ],
+    "rovinieta": [
+      {
+        "Data început": "2025-01-01",
+        "Data sfârșit": "2025-12-31",
+        "Categorie": "A – peste 12t, max 3 axe",
+        "Preț (RON)": 1200
+      }
+    ],
+    "revizie_ulei": [
+      {
+        "Km ultima revizie": 560000,
+        "Km următoarea revizie": 600000,
+        "Data": "2025-07-10",
+        "Cost (RON)": 2750
+      }
+    ],
+    "alimentare": [
+      {
+        "Data": "2026-03-12",
+        "Litri": 420,
+        "Preț/litru": 6.75,
+        "Cost total": 2835.00,
+        "Km la alimentare": 622100
+      },
+      {
+        "Data": "2026-03-08",
+        "Litri": 390,
+        "Preț/litru": 6.80,
+        "Cost total": 2652.00,
+        "Km la alimentare": 620800
+      }
+    ]
+  }
+}

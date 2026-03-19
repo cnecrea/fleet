@@ -1,0 +1,276 @@
+{
+  "version": 2,
+  "integration": "fleet",
+  "nr_inmatriculare": "BV33MNO",
+  "data_export": "2026-03-18T08:15:00.000000",
+  "identificare": {
+    "marca": "Iveco",
+    "model": "S-Way AS440S46T/P",
+    "vin": "WJMM1VTH40C345678",
+    "serie_civ": "X-0088776",
+    "an_fabricatie": 2021,
+    "an_prima_inmatriculare": 2021,
+    "motorizare": "Cursor 11 11.1L 460CP",
+    "combustibil": "lng",
+    "capacitate_cilindrica": 11118,
+    "putere_kw": 338,
+    "putere_cp": 460,
+    "tip_vehicul": "autotractor",
+    "mma": 18000,
+    "masa_proprie": 7800,
+    "nr_axe": 2,
+    "categorie_euro": "euro_6d",
+    "tip_suspensie": "pneumatica"
+  },
+  "kilometraj": {
+    "km_curent": 410300,
+    "ore_motor": 8200
+  },
+  "sofer": {
+    "nume": "Barbu Alexandru",
+    "cnp": "1880925084567",
+    "nr_permis": "BV-567890",
+    "categorii_permis": "B, C, CE",
+    "data_expirare_permis": "2029-11-10",
+    "cpc_numar": "CPC-RO-2024-44556",
+    "cpc_data_expirare": "2029-03-25",
+    "cpc_tip": "marfa",
+    "card_tahograf_numar": "RO 0000044556 01",
+    "card_tahograf_data_expirare": "2029-06-10",
+    "atestat_adr_numar": "",
+    "atestat_adr_data_expirare": "",
+    "atestat_adr_clase": "",
+    "fisa_medicala_data": "2025-12-01",
+    "fisa_medicala_data_expirare": "2026-12-01",
+    "fisa_medicala_apt": "restrictii",
+    "fisa_psihologica_data": "2025-12-03",
+    "fisa_psihologica_data_expirare": "2027-12-03"
+  },
+  "asigurari": {
+    "rca": {
+      "numar_polita": "RCA-2026-IVE-033",
+      "companie": "Euroins",
+      "data_emitere": "2025-11-15",
+      "data_expirare": "2026-11-15",
+      "cost": 3700
+    },
+    "casco": {
+      "numar_polita": "CASCO-2025-IVE-033",
+      "companie": "Groupama",
+      "data_emitere": "2025-05-01",
+      "data_expirare": "2026-05-01",
+      "cost": 8900
+    }
+  },
+  "documente": {
+    "itp": {
+      "data_expirare": "2027-04-10",
+      "statie": "RAR Brașov",
+      "kilometraj": 395000
+    },
+    "rovinieta": {
+      "data_inceput": "2026-01-01",
+      "data_sfarsit": "2026-12-31",
+      "categorie": "A – peste 12t, max 3 axe",
+      "pret": 1296
+    },
+    "copie_conforma": {
+      "numar": "CC-BV-2024-0345",
+      "data_expirare": "2029-07-31"
+    }
+  },
+  "licente": {
+    "licenta_transport_numar": "LT-RO-2022-00890",
+    "licenta_transport_tip": "Transport marfă cont propriu",
+    "licenta_transport_data_expirare": "2027-09-30",
+    "licenta_comunitara_numar": "LCOM-RO-2022-654",
+    "licenta_comunitara_data_expirare": "2027-09-30"
+  },
+  "administrativ": {
+    "proprietar": "Carpathian Express SRL",
+    "tip_proprietate": "leasing_operational",
+    "impozit_suma": 0,
+    "impozit_scadenta": "2026-03-31",
+    "impozit_localitate": "Brașov",
+    "leasing_data_expirare": "2027-12-01"
+  },
+  "adr": {
+    "certificat_numar": "",
+    "certificat_data_expirare": "",
+    "clase": "",
+    "consilier_nume": "",
+    "consilier_certificat": "",
+    "consilier_data_expirare": "",
+    "echipament_complet": false
+  },
+  "tahograf": {
+    "tip": "smart_v2",
+    "data_verificare": "2025-08-15",
+    "data_urmatoare_verificare": "2027-08-15",
+    "data_calibrare": "2025-08-15"
+  },
+  "combustibil_adblue": {
+    "capacitate_rezervor": 0,
+    "nivel_combustibil": 0,
+    "consum_mediu": 22.5,
+    "adblue_capacitate": 0,
+    "adblue_nivel": 0,
+    "alimentare_data": "2026-03-16",
+    "alimentare_litri": 280,
+    "alimentare_pret_litru": 5.10,
+    "alimentare_cost": 1428.00,
+    "alimentare_km": 410000
+  },
+  "mentenanta": {
+    "revizie_ulei": {
+      "km_ultimul": 400000,
+      "km_urmator": 440000,
+      "data": "2026-03-01",
+      "cost": 3100
+    },
+    "distributie": {
+      "km_ultimul": 350000,
+      "km_urmator": 550000,
+      "data": "2025-09-20",
+      "cost": 7800
+    },
+    "anvelope": {
+      "data_vara": "2025-04-20",
+      "data_iarna": "2025-11-08",
+      "cost": 12200,
+      "dot": "2425",
+      "tip": "drive",
+      "nr_resapari": 1,
+      "km_montare": 370000
+    },
+    "baterie": {
+      "data_schimb": "2025-06-15",
+      "cost": 1900
+    },
+    "frane": {
+      "placute_km_ultimul": 380000,
+      "placute_km_urmator": 480000,
+      "placute_data": "2025-12-20",
+      "placute_cost": 2300,
+      "discuri_km_ultimul": 350000,
+      "discuri_km_urmator": 550000,
+      "discuri_data": "2025-09-20",
+      "discuri_cost": 4600
+    },
+    "dpf": {
+      "data_curatare": "2025-11-10",
+      "km_curatare": 390000,
+      "cost": 1450
+    },
+    "turbo": {
+      "data_revizie": "2025-09-20",
+      "km_revizie": 350000,
+      "cost": 2400
+    }
+  },
+  "echipament": {
+    "trusa_prim_ajutor": {
+      "data_expirare": "2027-10-31"
+    },
+    "extinctor": {
+      "data_expirare": "2028-03-15",
+      "capacitate": 6
+    }
+  },
+  "remorca": {
+    "nr_inmatriculare": "BV15BAS",
+    "tip": "basculanta",
+    "marca": "Meiller MHPS 44/3",
+    "mma": 38000,
+    "masa_proprie": 7800,
+    "nr_axe": 3,
+    "an_fabricatie": 2020,
+    "itp_data_expirare": "2027-04-10",
+    "rca_data_expirare": "2026-11-15",
+    "rovinieta_data_sfarsit": "2026-12-31"
+  },
+  "costuri_extinse": {
+    "taxe_drum": {
+      "tara": "ro",
+      "suma": 0,
+      "valuta": "RON",
+      "data": ""
+    },
+    "amenzi": {
+      "suma": 3000,
+      "motiv": "Depășire program conducere zilnic",
+      "tara": "ro",
+      "data": "2026-02-05",
+      "status": "contestata"
+    }
+  },
+  "istoric": {
+    "rca": [
+      {
+        "Număr poliță": "RCA-2025-IVE-033",
+        "Companie": "Euroins",
+        "Data emitere": "2024-11-15",
+        "Data expirare": "2025-11-15",
+        "Cost (RON)": 3400
+      },
+      {
+        "Număr poliță": "RCA-2024-IVE-033",
+        "Companie": "City Insurance",
+        "Data emitere": "2023-11-20",
+        "Data expirare": "2024-11-20",
+        "Cost (RON)": 3100
+      }
+    ],
+    "rovinieta": [
+      {
+        "Data început": "2025-01-01",
+        "Data sfârșit": "2025-12-31",
+        "Categorie": "A – peste 12t, max 3 axe",
+        "Preț (RON)": 1200
+      },
+      {
+        "Data început": "2024-01-01",
+        "Data sfârșit": "2024-12-31",
+        "Categorie": "A – peste 12t, max 3 axe",
+        "Preț (RON)": 1100
+      }
+    ],
+    "revizie_ulei": [
+      {
+        "Km ultima revizie": 360000,
+        "Km următoarea revizie": 400000,
+        "Data": "2025-10-10",
+        "Cost (RON)": 2900
+      },
+      {
+        "Km ultima revizie": 320000,
+        "Km următoarea revizie": 360000,
+        "Data": "2025-05-15",
+        "Cost (RON)": 2850
+      }
+    ],
+    "alimentare": [
+      {
+        "Data": "2026-03-13",
+        "Litri": 290,
+        "Preț/litru": 5.15,
+        "Cost total": 1493.50,
+        "Km la alimentare": 409500
+      },
+      {
+        "Data": "2026-03-09",
+        "Litri": 270,
+        "Preț/litru": 5.08,
+        "Cost total": 1371.60,
+        "Km la alimentare": 408200
+      },
+      {
+        "Data": "2026-03-05",
+        "Litri": 300,
+        "Preț/litru": 5.12,
+        "Cost total": 1536.00,
+        "Km la alimentare": 406800
+      }
+    ]
+  }
+}

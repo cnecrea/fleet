@@ -1,0 +1,270 @@
+{
+  "version": 2,
+  "integration": "fleet",
+  "nr_inmatriculare": "CT12JKL",
+  "data_export": "2026-03-18T08:15:00.000000",
+  "identificare": {
+    "marca": "DAF",
+    "model": "XF 480 FT",
+    "vin": "XLRTE47MS0E234567",
+    "serie_civ": "X-0033211",
+    "an_fabricatie": 2023,
+    "an_prima_inmatriculare": 2023,
+    "motorizare": "MX-13 12.9L 483CP",
+    "combustibil": "diesel",
+    "capacitate_cilindrica": 12902,
+    "putere_kw": 355,
+    "putere_cp": 483,
+    "tip_vehicul": "autotractor",
+    "mma": 18000,
+    "masa_proprie": 7250,
+    "nr_axe": 2,
+    "categorie_euro": "euro_6d",
+    "tip_suspensie": "pneumatica"
+  },
+  "kilometraj": {
+    "km_curent": 198400,
+    "ore_motor": 3970
+  },
+  "sofer": {
+    "nume": "Stan Gabriel",
+    "cnp": "1950815134567",
+    "nr_permis": "CT-345678",
+    "categorii_permis": "B, C, CE",
+    "data_expirare_permis": "2033-02-28",
+    "cpc_numar": "CPC-RO-2025-90123",
+    "cpc_data_expirare": "2030-01-15",
+    "cpc_tip": "marfa",
+    "card_tahograf_numar": "RO 0000090123 01",
+    "card_tahograf_data_expirare": "2030-05-20",
+    "atestat_adr_numar": "ADR-CT-2025-123",
+    "atestat_adr_data_expirare": "2030-03-15",
+    "atestat_adr_clase": "2, 3, 4.1, 4.2, 5.1, 6.1, 8, 9",
+    "fisa_medicala_data": "2026-02-10",
+    "fisa_medicala_data_expirare": "2027-02-10",
+    "fisa_medicala_apt": "apt",
+    "fisa_psihologica_data": "2026-02-12",
+    "fisa_psihologica_data_expirare": "2028-02-12"
+  },
+  "asigurari": {
+    "rca": {
+      "numar_polita": "RCA-2026-DAF-012",
+      "companie": "Omniasig",
+      "data_emitere": "2026-03-01",
+      "data_expirare": "2027-03-01",
+      "cost": 4800
+    },
+    "casco": {
+      "numar_polita": "CASCO-2026-DAF-012",
+      "companie": "Allianz-Țiriac",
+      "data_emitere": "2026-03-01",
+      "data_expirare": "2027-03-01",
+      "cost": 11500
+    }
+  },
+  "documente": {
+    "itp": {
+      "data_expirare": "2028-01-15",
+      "statie": "RAR Constanța",
+      "kilometraj": 185000
+    },
+    "rovinieta": {
+      "data_inceput": "2026-01-01",
+      "data_sfarsit": "2026-12-31",
+      "categorie": "A – peste 12t, max 3 axe",
+      "pret": 1296
+    },
+    "copie_conforma": {
+      "numar": "CC-CT-2025-0567",
+      "data_expirare": "2030-02-28"
+    }
+  },
+  "licente": {
+    "licenta_transport_numar": "LT-RO-2024-01567",
+    "licenta_transport_tip": "Transport marfă internațional și cabotaj",
+    "licenta_transport_data_expirare": "2029-06-30",
+    "licenta_comunitara_numar": "LCOM-RO-2024-567",
+    "licenta_comunitara_data_expirare": "2029-06-30"
+  },
+  "administrativ": {
+    "proprietar": "Black Sea Logistics SRL",
+    "tip_proprietate": "leasing",
+    "impozit_suma": 0,
+    "impozit_scadenta": "2026-03-31",
+    "impozit_localitate": "Constanța",
+    "leasing_data_expirare": "2029-04-01"
+  },
+  "adr": {
+    "certificat_numar": "ADR-VEH-RO-2025-789",
+    "certificat_data_expirare": "2028-03-15",
+    "clase": "2, 3, 4.1, 4.2, 5.1, 6.1, 8, 9",
+    "consilier_nume": "Marinescu Radu",
+    "consilier_certificat": "CSA-RO-2024-9876",
+    "consilier_data_expirare": "2029-12-31",
+    "echipament_complet": true
+  },
+  "tahograf": {
+    "tip": "smart_v2",
+    "data_verificare": "2026-01-20",
+    "data_urmatoare_verificare": "2028-01-20",
+    "data_calibrare": "2026-01-20"
+  },
+  "combustibil_adblue": {
+    "capacitate_rezervor": 430,
+    "nivel_combustibil": 310,
+    "consum_mediu": 24.6,
+    "adblue_capacitate": 80,
+    "adblue_nivel": 60,
+    "alimentare_data": "2026-03-17",
+    "alimentare_litri": 410,
+    "alimentare_pret_litru": 6.78,
+    "alimentare_cost": 2779.80,
+    "alimentare_km": 198100
+  },
+  "mentenanta": {
+    "revizie_ulei": {
+      "km_ultimul": 180000,
+      "km_urmator": 220000,
+      "data": "2026-02-20",
+      "cost": 3600
+    },
+    "distributie": {
+      "km_ultimul": 0,
+      "km_urmator": 400000,
+      "data": "",
+      "cost": 0
+    },
+    "anvelope": {
+      "data_vara": "2025-04-15",
+      "data_iarna": "2025-11-05",
+      "cost": 14800,
+      "dot": "2524",
+      "tip": "steer",
+      "nr_resapari": 0,
+      "km_montare": 150000
+    },
+    "baterie": {
+      "data_schimb": "",
+      "cost": 0
+    },
+    "frane": {
+      "placute_km_ultimul": 150000,
+      "placute_km_urmator": 250000,
+      "placute_data": "2025-10-01",
+      "placute_cost": 2800,
+      "discuri_km_ultimul": 0,
+      "discuri_km_urmator": 400000,
+      "discuri_data": "",
+      "discuri_cost": 0
+    },
+    "dpf": {
+      "data_curatare": "",
+      "km_curatare": 0,
+      "cost": 0
+    },
+    "turbo": {
+      "data_revizie": "",
+      "km_revizie": 0,
+      "cost": 0
+    }
+  },
+  "echipament": {
+    "trusa_prim_ajutor": {
+      "data_expirare": "2028-06-30"
+    },
+    "extinctor": {
+      "data_expirare": "2028-09-01",
+      "capacitate": 6
+    }
+  },
+  "remorca": {
+    "nr_inmatriculare": "CT05CIS",
+    "tip": "cisterna",
+    "marca": "LAG Trailers",
+    "mma": 40000,
+    "masa_proprie": 8500,
+    "nr_axe": 3,
+    "an_fabricatie": 2022,
+    "itp_data_expirare": "2028-01-15",
+    "rca_data_expirare": "2027-03-01",
+    "rovinieta_data_sfarsit": "2026-12-31"
+  },
+  "costuri_extinse": {
+    "taxe_drum": {
+      "tara": "de",
+      "suma": 187.40,
+      "valuta": "EUR",
+      "data": "2026-02-15"
+    },
+    "amenzi": {
+      "suma": 500,
+      "motiv": "Parcare neregulamentară zonă interzisă",
+      "tara": "de",
+      "data": "2026-01-30",
+      "status": "neplatita"
+    }
+  },
+  "istoric": {
+    "rca": [
+      {
+        "Număr poliță": "RCA-2025-DAF-012",
+        "Companie": "Generali",
+        "Data emitere": "2025-03-01",
+        "Data expirare": "2026-03-01",
+        "Cost (RON)": 4400
+      }
+    ],
+    "rovinieta": [
+      {
+        "Data început": "2025-01-01",
+        "Data sfârșit": "2025-12-31",
+        "Categorie": "A – peste 12t, max 3 axe",
+        "Preț (RON)": 1200
+      }
+    ],
+    "revizie_ulei": [
+      {
+        "Km ultima revizie": 140000,
+        "Km următoarea revizie": 180000,
+        "Data": "2025-09-10",
+        "Cost (RON)": 3400
+      },
+      {
+        "Km ultima revizie": 100000,
+        "Km următoarea revizie": 140000,
+        "Data": "2025-04-05",
+        "Cost (RON)": 3200
+      }
+    ],
+    "alimentare": [
+      {
+        "Data": "2026-03-13",
+        "Litri": 400,
+        "Preț/litru": 6.82,
+        "Cost total": 2728.00,
+        "Km la alimentare": 197400
+      },
+      {
+        "Data": "2026-03-09",
+        "Litri": 380,
+        "Preț/litru": 6.79,
+        "Cost total": 2580.20,
+        "Km la alimentare": 196100
+      },
+      {
+        "Data": "2026-03-04",
+        "Litri": 420,
+        "Preț/litru": 6.85,
+        "Cost total": 2877.00,
+        "Km la alimentare": 194700
+      },
+      {
+        "Data": "2026-02-28",
+        "Litri": 360,
+        "Preț/litru": 6.90,
+        "Cost total": 2484.00,
+        "Km la alimentare": 193200
+      }
+    ]
+  }
+}

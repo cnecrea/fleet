@@ -1,0 +1,270 @@
+{
+  "version": 2,
+  "integration": "fleet",
+  "nr_inmatriculare": "B123ABC",
+  "data_export": "2026-03-15T10:30:00.000000",
+  "identificare": {
+    "marca": "MAN",
+    "model": "TGX 18.510",
+    "vin": "WMAN05ZZ4CY123456",
+    "serie_civ": "X-0012345",
+    "an_fabricatie": 2021,
+    "an_prima_inmatriculare": 2022,
+    "motorizare": "D2676 LF08 12.4L 510CP",
+    "combustibil": "diesel",
+    "capacitate_cilindrica": 12419,
+    "putere_kw": 375,
+    "putere_cp": 510,
+    "tip_vehicul": "autotractor",
+    "mma": 18000,
+    "masa_proprie": 7480,
+    "nr_axe": 2,
+    "categorie_euro": "euro_6d",
+    "tip_suspensie": "pneumatica"
+  },
+  "kilometraj": {
+    "km_curent": 487520,
+    "ore_motor": 9840
+  },
+  "sofer": {
+    "nume": "Popescu Ion",
+    "cnp": "1850315054321",
+    "nr_permis": "BH-123456",
+    "categorii_permis": "B, C, CE",
+    "data_expirare_permis": "2029-06-15",
+    "cpc_numar": "CPC-RO-2023-78901",
+    "cpc_data_expirare": "2028-09-20",
+    "cpc_tip": "marfa",
+    "card_tahograf_numar": "RO 0000012345 01",
+    "card_tahograf_data_expirare": "2028-03-10",
+    "atestat_adr_numar": "ADR-BH-2024-567",
+    "atestat_adr_data_expirare": "2029-04-22",
+    "atestat_adr_clase": "2, 3, 4.1, 6.1, 8, 9",
+    "fisa_medicala_data": "2025-11-10",
+    "fisa_medicala_data_expirare": "2026-11-10",
+    "fisa_medicala_apt": "apt",
+    "fisa_psihologica_data": "2025-11-12",
+    "fisa_psihologica_data_expirare": "2027-11-12"
+  },
+  "asigurari": {
+    "rca": {
+      "numar_polita": "RCA-2026-MAN-001",
+      "companie": "Euroins",
+      "data_emitere": "2026-01-15",
+      "data_expirare": "2027-01-15",
+      "cost": 4200
+    },
+    "casco": {
+      "numar_polita": "CASCO-2025-MAN-077",
+      "companie": "Allianz-Țiriac",
+      "data_emitere": "2025-06-01",
+      "data_expirare": "2026-06-01",
+      "cost": 8500
+    }
+  },
+  "documente": {
+    "itp": {
+      "data_expirare": "2027-02-28",
+      "statie": "RAR Oradea",
+      "kilometraj": 472100
+    },
+    "rovinieta": {
+      "data_inceput": "2026-01-01",
+      "data_sfarsit": "2026-12-31",
+      "categorie": "A – peste 12t, max 3 axe",
+      "pret": 1296
+    },
+    "copie_conforma": {
+      "numar": "CC-BH-2024-0123",
+      "data_expirare": "2029-05-31"
+    }
+  },
+  "licente": {
+    "licenta_transport_numar": "LT-RO-2023-00456",
+    "licenta_transport_tip": "Transport marfă cont propriu și terți",
+    "licenta_transport_data_expirare": "2028-12-31",
+    "licenta_comunitara_numar": "LCOM-RO-2023-789",
+    "licenta_comunitara_data_expirare": "2028-12-31"
+  },
+  "administrativ": {
+    "proprietar": "Trans Europa Logistic SRL",
+    "tip_proprietate": "leasing",
+    "impozit_suma": 0,
+    "impozit_scadenta": "2026-03-31",
+    "impozit_localitate": "Oradea",
+    "leasing_data_expirare": "2027-08-15"
+  },
+  "adr": {
+    "certificat_numar": "ADR-VEH-RO-2024-321",
+    "certificat_data_expirare": "2027-06-30",
+    "clase": "2, 3, 4.1, 6.1, 8, 9",
+    "consilier_nume": "Ionescu Maria",
+    "consilier_certificat": "CSA-RO-2022-1234",
+    "consilier_data_expirare": "2027-12-31",
+    "echipament_complet": true
+  },
+  "tahograf": {
+    "tip": "smart_v2",
+    "data_verificare": "2025-09-12",
+    "data_urmatoare_verificare": "2027-09-12",
+    "data_calibrare": "2025-09-12"
+  },
+  "combustibil_adblue": {
+    "capacitate_rezervor": 400,
+    "nivel_combustibil": 220,
+    "consum_mediu": 28.5,
+    "adblue_capacitate": 75,
+    "adblue_nivel": 45,
+    "alimentare_data": "2026-03-14",
+    "alimentare_litri": 350,
+    "alimentare_pret_litru": 6.85,
+    "alimentare_cost": 2397.50,
+    "alimentare_km": 487200
+  },
+  "mentenanta": {
+    "revizie_ulei": {
+      "km_ultimul": 460000,
+      "km_urmator": 500000,
+      "data": "2025-12-20",
+      "cost": 3200
+    },
+    "distributie": {
+      "km_ultimul": 380000,
+      "km_urmator": 580000,
+      "data": "2025-03-10",
+      "cost": 8500
+    },
+    "anvelope": {
+      "data_vara": "2025-04-01",
+      "data_iarna": "2025-11-15",
+      "cost": 12600,
+      "dot": "2324",
+      "tip": "drive",
+      "nr_resapari": 0,
+      "km_montare": 445000
+    },
+    "baterie": {
+      "data_schimb": "2024-10-05",
+      "cost": 1800
+    },
+    "frane": {
+      "placute_km_ultimul": 440000,
+      "placute_km_urmator": 540000,
+      "placute_data": "2025-10-15",
+      "placute_cost": 2400,
+      "discuri_km_ultimul": 380000,
+      "discuri_km_urmator": 580000,
+      "discuri_data": "2025-03-10",
+      "discuri_cost": 4800
+    },
+    "dpf": {
+      "data_curatare": "2025-08-20",
+      "km_curatare": 430000,
+      "cost": 1500
+    },
+    "turbo": {
+      "data_revizie": "2025-03-10",
+      "km_revizie": 380000,
+      "cost": 2200
+    }
+  },
+  "echipament": {
+    "trusa_prim_ajutor": {
+      "data_expirare": "2027-06-30"
+    },
+    "extinctor": {
+      "data_expirare": "2027-09-15",
+      "capacitate": 6
+    }
+  },
+  "remorca": {
+    "nr_inmatriculare": "BH09DEF",
+    "tip": "prelata",
+    "marca": "Schmitz Cargobull",
+    "mma": 39000,
+    "masa_proprie": 7200,
+    "nr_axe": 3,
+    "an_fabricatie": 2020,
+    "itp_data_expirare": "2027-02-28",
+    "rca_data_expirare": "2027-01-15",
+    "rovinieta_data_sfarsit": "2026-12-31"
+  },
+  "costuri_extinse": {
+    "taxe_drum": {
+      "tara": "hu",
+      "suma": 85.50,
+      "valuta": "EUR",
+      "data": "2026-03-10"
+    },
+    "amenzi": {
+      "suma": 2500,
+      "motiv": "Depășire tonaj pod",
+      "tara": "ro",
+      "data": "2025-08-14",
+      "status": "platita"
+    }
+  },
+  "istoric": {
+    "rca": [
+      {
+        "Număr poliță": "RCA-2025-MAN-001",
+        "Companie": "Groupama",
+        "Data emitere": "2025-01-10",
+        "Data expirare": "2026-01-10",
+        "Cost (RON)": 3800
+      },
+      {
+        "Număr poliță": "RCA-2024-MAN-001",
+        "Companie": "Euroins",
+        "Data emitere": "2024-01-12",
+        "Data expirare": "2025-01-12",
+        "Cost (RON)": 3500
+      }
+    ],
+    "rovinieta": [
+      {
+        "Data început": "2025-01-01",
+        "Data sfârșit": "2025-12-31",
+        "Categorie": "A – peste 12t, max 3 axe",
+        "Preț (RON)": 1200
+      }
+    ],
+    "revizie_ulei": [
+      {
+        "Km ultima revizie": 420000,
+        "Km următoarea revizie": 460000,
+        "Data": "2025-06-15",
+        "Cost (RON)": 2900
+      },
+      {
+        "Km ultima revizie": 380000,
+        "Km următoarea revizie": 420000,
+        "Data": "2025-01-20",
+        "Cost (RON)": 2800
+      }
+    ],
+    "alimentare": [
+      {
+        "Data": "2026-03-10",
+        "Litri": 380,
+        "Preț/litru": 6.79,
+        "Cost total": 2580.20,
+        "Km la alimentare": 486800
+      },
+      {
+        "Data": "2026-03-05",
+        "Litri": 350,
+        "Preț/litru": 6.92,
+        "Cost total": 2422.00,
+        "Km la alimentare": 485500
+      },
+      {
+        "Data": "2026-02-28",
+        "Litri": 370,
+        "Preț/litru": 6.88,
+        "Cost total": 2545.60,
+        "Km la alimentare": 484200
+      }
+    ]
+  }
+}

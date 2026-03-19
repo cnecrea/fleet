@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentație și configurare
+    url: https://github.com/cnecrea/fleet/blob/main/README.md
+    about: Documentația completă despre instalarea, configurarea și utilizarea integrării Fleet pentru Home Assistant.
+  - name: Discuții și întrebări
+    url: https://github.com/cnecrea/cnecrea/discussions
+    about: Întrebări generale, discuții despre funcționalități și ajutor de la comunitate.

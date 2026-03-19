@@ -1,0 +1,263 @@
+{
+  "version": 2,
+  "integration": "fleet",
+  "nr_inmatriculare": "TM55DEF",
+  "data_export": "2026-03-18T08:15:00.000000",
+  "identificare": {
+    "marca": "Mercedes-Benz",
+    "model": "Actros 1845 LS",
+    "vin": "WDB96340310987654",
+    "serie_civ": "X-0054321",
+    "an_fabricatie": 2022,
+    "an_prima_inmatriculare": 2022,
+    "motorizare": "OM471 12.8L 449CP",
+    "combustibil": "diesel",
+    "capacitate_cilindrica": 12809,
+    "putere_kw": 330,
+    "putere_cp": 449,
+    "tip_vehicul": "autotractor",
+    "mma": 18000,
+    "masa_proprie": 7400,
+    "nr_axe": 2,
+    "categorie_euro": "euro_6d",
+    "tip_suspensie": "pneumatica"
+  },
+  "kilometraj": {
+    "km_curent": 312800,
+    "ore_motor": 6250
+  },
+  "sofer": {
+    "nume": "Drăgan Vasile",
+    "cnp": "1870519354321",
+    "nr_permis": "TM-112233",
+    "categorii_permis": "B, C, CE",
+    "data_expirare_permis": "2030-04-12",
+    "cpc_numar": "CPC-RO-2023-56789",
+    "cpc_data_expirare": "2028-11-30",
+    "cpc_tip": "marfa",
+    "card_tahograf_numar": "RO 0000056789 01",
+    "card_tahograf_data_expirare": "2028-07-15",
+    "atestat_adr_numar": "ADR-TM-2024-890",
+    "atestat_adr_data_expirare": "2029-06-10",
+    "atestat_adr_clase": "3, 4.1, 8, 9",
+    "fisa_medicala_data": "2026-01-20",
+    "fisa_medicala_data_expirare": "2027-01-20",
+    "fisa_medicala_apt": "apt",
+    "fisa_psihologica_data": "2026-01-22",
+    "fisa_psihologica_data_expirare": "2028-01-22"
+  },
+  "asigurari": {
+    "rca": {
+      "numar_polita": "RCA-2026-MB-055",
+      "companie": "Allianz-Țiriac",
+      "data_emitere": "2025-12-01",
+      "data_expirare": "2026-12-01",
+      "cost": 4500
+    },
+    "casco": {
+      "numar_polita": "CASCO-2026-MB-033",
+      "companie": "Generali",
+      "data_emitere": "2026-01-15",
+      "data_expirare": "2027-01-15",
+      "cost": 9800
+    }
+  },
+  "documente": {
+    "itp": {
+      "data_expirare": "2027-09-30",
+      "statie": "RAR Timișoara",
+      "kilometraj": 298500
+    },
+    "rovinieta": {
+      "data_inceput": "2026-01-01",
+      "data_sfarsit": "2026-12-31",
+      "categorie": "A – peste 12t, max 3 axe",
+      "pret": 1296
+    },
+    "copie_conforma": {
+      "numar": "CC-TM-2023-0456",
+      "data_expirare": "2028-08-20"
+    }
+  },
+  "licente": {
+    "licenta_transport_numar": "LT-RO-2023-01234",
+    "licenta_transport_tip": "Transport marfă internațional",
+    "licenta_transport_data_expirare": "2028-06-30",
+    "licenta_comunitara_numar": "LCOM-RO-2023-321",
+    "licenta_comunitara_data_expirare": "2028-06-30"
+  },
+  "administrativ": {
+    "proprietar": "West Transport Banat SRL",
+    "tip_proprietate": "leasing",
+    "impozit_suma": 0,
+    "impozit_scadenta": "2026-03-31",
+    "impozit_localitate": "Timișoara",
+    "leasing_data_expirare": "2028-03-15"
+  },
+  "adr": {
+    "certificat_numar": "ADR-VEH-RO-2025-567",
+    "certificat_data_expirare": "2027-12-15",
+    "clase": "3, 4.1, 8, 9",
+    "consilier_nume": "Petrescu Ana",
+    "consilier_certificat": "CSA-RO-2023-5678",
+    "consilier_data_expirare": "2028-06-30",
+    "echipament_complet": true
+  },
+  "tahograf": {
+    "tip": "smart_v2",
+    "data_verificare": "2026-02-10",
+    "data_urmatoare_verificare": "2028-02-10",
+    "data_calibrare": "2026-02-10"
+  },
+  "combustibil_adblue": {
+    "capacitate_rezervor": 390,
+    "nivel_combustibil": 290,
+    "consum_mediu": 25.3,
+    "adblue_capacitate": 65,
+    "adblue_nivel": 50,
+    "alimentare_data": "2026-03-17",
+    "alimentare_litri": 360,
+    "alimentare_pret_litru": 6.90,
+    "alimentare_cost": 2484.00,
+    "alimentare_km": 312500
+  },
+  "mentenanta": {
+    "revizie_ulei": {
+      "km_ultimul": 300000,
+      "km_urmator": 340000,
+      "data": "2026-02-05",
+      "cost": 3400
+    },
+    "distributie": {
+      "km_ultimul": 200000,
+      "km_urmator": 400000,
+      "data": "2025-04-15",
+      "cost": 10500
+    },
+    "anvelope": {
+      "data_vara": "2025-04-05",
+      "data_iarna": "2025-10-25",
+      "cost": 13200,
+      "dot": "2425",
+      "tip": "steer",
+      "nr_resapari": 0,
+      "km_montare": 270000
+    },
+    "baterie": {
+      "data_schimb": "2025-08-20",
+      "cost": 2100
+    },
+    "frane": {
+      "placute_km_ultimul": 280000,
+      "placute_km_urmator": 380000,
+      "placute_data": "2025-12-10",
+      "placute_cost": 2600,
+      "discuri_km_ultimul": 200000,
+      "discuri_km_urmator": 400000,
+      "discuri_data": "2025-04-15",
+      "discuri_cost": 5200
+    },
+    "dpf": {
+      "data_curatare": "2026-01-10",
+      "km_curatare": 295000,
+      "cost": 1600
+    },
+    "turbo": {
+      "data_revizie": "2025-04-15",
+      "km_revizie": 200000,
+      "cost": 2000
+    }
+  },
+  "echipament": {
+    "trusa_prim_ajutor": {
+      "data_expirare": "2027-08-31"
+    },
+    "extinctor": {
+      "data_expirare": "2027-12-01",
+      "capacitate": 6
+    }
+  },
+  "remorca": {
+    "nr_inmatriculare": "TM22SEM",
+    "tip": "prelata",
+    "marca": "Kögel Cargo",
+    "mma": 39000,
+    "masa_proprie": 6900,
+    "nr_axe": 3,
+    "an_fabricatie": 2021,
+    "itp_data_expirare": "2027-09-30",
+    "rca_data_expirare": "2026-12-01",
+    "rovinieta_data_sfarsit": "2026-12-31"
+  },
+  "costuri_extinse": {
+    "taxe_drum": {
+      "tara": "hu",
+      "suma": 92.00,
+      "valuta": "EUR",
+      "data": "2026-03-12"
+    },
+    "amenzi": {
+      "suma": 1200,
+      "motiv": "Depășire viteză autostradă",
+      "tara": "hu",
+      "data": "2026-01-20",
+      "status": "platita"
+    }
+  },
+  "istoric": {
+    "rca": [
+      {
+        "Număr poliță": "RCA-2025-MB-055",
+        "Companie": "Allianz-Țiriac",
+        "Data emitere": "2024-12-01",
+        "Data expirare": "2025-12-01",
+        "Cost (RON)": 4100
+      }
+    ],
+    "rovinieta": [
+      {
+        "Data început": "2025-01-01",
+        "Data sfârșit": "2025-12-31",
+        "Categorie": "A – peste 12t, max 3 axe",
+        "Preț (RON)": 1200
+      }
+    ],
+    "revizie_ulei": [
+      {
+        "Km ultima revizie": 260000,
+        "Km următoarea revizie": 300000,
+        "Data": "2025-08-20",
+        "Cost (RON)": 3100
+      },
+      {
+        "Km ultima revizie": 220000,
+        "Km următoarea revizie": 260000,
+        "Data": "2025-03-15",
+        "Cost (RON)": 3000
+      }
+    ],
+    "alimentare": [
+      {
+        "Data": "2026-03-14",
+        "Litri": 370,
+        "Preț/litru": 6.85,
+        "Cost total": 2534.50,
+        "Km la alimentare": 311900
+      },
+      {
+        "Data": "2026-03-10",
+        "Litri": 345,
+        "Preț/litru": 6.88,
+        "Cost total": 2373.60,
+        "Km la alimentare": 310600
+      },
+      {
+        "Data": "2026-03-06",
+        "Litri": 380,
+        "Preț/litru": 6.82,
+        "Cost total": 2591.60,
+        "Km la alimentare": 309200
+      }
+    ]
+  }
+}
