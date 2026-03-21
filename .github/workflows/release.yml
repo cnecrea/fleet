@@ -129,7 +129,7 @@ jobs:
               commits = "- Nu s-au putut extrage commit-urile"
 
           # ── Generează fișierul markdown ──
-          body = f"""## fleet v{new_version}
+          body = f"""## Manager de flotă v{new_version}
 
           ### 📋 Modificări
 
@@ -143,7 +143,7 @@ jobs:
           |:--------:|:------------:|:--------------:|
           | {stars} | {instalari} | {clone_14z} |
 
-          Dacă integrarea **fleet** îți este utilă, lasă un ⭐ pe repository — îi ajută și pe alți utilizatori să o descopere.
+          Dacă integrarea **Manager de flotă** îți este utilă, lasă un ⭐ pe repository — îi ajută și pe alți utilizatori să o descopere.
 
           ---
 
