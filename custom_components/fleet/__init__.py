@@ -21,6 +21,7 @@ from homeassistant.core import HomeAssistant, ServiceCall
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers import entity_registry as er
+from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.event import async_track_time_interval
 
 from .const import (
@@ -72,6 +73,68 @@ SCHEMA_RESTORE_FLOTA = vol.Schema(
         vol.Required("cale_fisier"): cv.string,
     }
 )
+
+# Caractere permise în numere de înmatriculare (alfanumerice)
+import re as _re
+
+_NUMAR_SAFE_RE = _re.compile(r"^[a-z0-9]+$")
+
+
+def _valideaza_cale_fisier(
+    hass: HomeAssistant, cale: str, extensie: str = ""
+) -> Path:
+    """Validează și rezolvă calea, restricționând-o la /config/.
+
+    Aruncă ValueError dacă:
+    - calea rezolvată iese din directorul HA config
+    - calea conține componente '..'
+    - extensia nu corespunde (dacă e specificată)
+    """
+    cale_path = Path(cale)
+    config_dir = Path(hass.config.path()).resolve()
+    cale_rezolvata = cale_path.resolve()
+
+    # Verificare path traversal
+    if ".." in cale_path.parts:
+        raise ValueError(
+            f"Calea conține componente nepermise (..): {cale}"
+        )
+
+    if not str(cale_rezolvata).startswith(str(config_dir)):
+        raise ValueError(
+            f"Calea trebuie să fie în directorul config ({config_dir}): {cale}"
+        )
+
+    if extensie and not cale_rezolvata.name.endswith(extensie):
+        raise ValueError(
+            f"Fișierul trebuie să aibă extensia {extensie}: {cale}"
+        )
+
+    return cale_rezolvata
+
+
+def _sanitize_nr_for_path(nr_norm: str) -> str:
+    """Verifică că nr normalizat e sigur pentru utilizare în path-uri.
+
+    Aruncă ValueError dacă conține caractere neașteptate.
+    """
+    if not _NUMAR_SAFE_RE.match(nr_norm):
+        raise ValueError(
+            f"Număr de înmatriculare normalizat conține caractere "
+            f"nepermise: {nr_norm!r}"
+        )
+    return nr_norm
+
+
+def _valideaza_zip_entry_name(name: str) -> bool:
+    """Verifică că un entry din ZIP este sigur (fără path traversal)."""
+    if ".." in name or name.startswith("/") or name.startswith("\\"):
+        return False
+    # Verifică că path-ul normalizat nu iese din rădăcina ZIP
+    normalized = Path(name).as_posix()
+    if normalized.startswith("..") or "/../" in normalized:
+        return False
+    return True
 
 
 # ─────────────────────────────────────────────
@@ -191,11 +254,11 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         hass.data[DOMAIN].pop(entry.entry_id, None)
         _LOGGER.debug("[Fleet] Entry %s eliminat din hass.data", nr)
 
-        # Verifică dacă mai sunt entry-uri active (ignoră cheile interne)
-        chei_interne = {LICENSE_DATA_KEY, "_cancel_heartbeat"}
+        # Verifică dacă mai sunt entry-uri active
         entry_ids_ramase = {
-            k for k in hass.data.get(DOMAIN, {})
-            if k not in chei_interne
+            e.entry_id
+            for e in hass.config_entries.async_entries(DOMAIN)
+            if e.entry_id != entry.entry_id
         }
 
         _LOGGER.debug(
@@ -311,6 +374,7 @@ async def async_remove_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
         notify_data = hass.data.pop(f"{DOMAIN}_notify", None)
         if notify_data and notify_data.get("fingerprint"):
             await _send_lifecycle_event(
+                hass,
                 notify_data["fingerprint"],
                 notify_data.get("license_key", ""),
                 "integration_removed",
@@ -318,7 +382,7 @@ async def async_remove_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
 
 
 async def _send_lifecycle_event(
-    fingerprint: str, license_key: str, action: str
+    hass: HomeAssistant, fingerprint: str, license_key: str, action: str
 ) -> None:
     """Trimite un eveniment lifecycle direct (fără LicenseManager).
 
@@ -342,30 +406,30 @@ async def _send_lifecycle_event(
     }
     # HMAC cu fingerprint ca cheie (identic cu LicenseManager._compute_request_hmac)
     data = {k: v for k, v in payload.items() if k != "hmac"}
-    import json
-    msg = json.dumps(data, sort_keys=True).encode()
+    import json as _json
+    msg = _json.dumps(data, sort_keys=True).encode()
     payload["hmac"] = hmac_lib.new(
         fingerprint.encode(), msg, hashlib.sha256
     ).hexdigest()
 
     try:
-        async with aiohttp.ClientSession() as session:
-            async with session.post(
-                f"{LICENSE_API_URL}/notify",
-                json=payload,
-                timeout=aiohttp.ClientTimeout(total=10),
-                headers={
-                    "Content-Type": "application/json",
-                    "User-Agent": "Fleet-HA-Integration/3.0",
-                },
-            ) as resp:
-                if resp.status == 200:
-                    result = await resp.json()
-                    if not result.get("success"):
-                        _LOGGER.warning(
-                            "[Fleet] Server a refuzat '%s': %s",
-                            action, result.get("error"),
-                        )
+        session = async_get_clientsession(hass)
+        async with session.post(
+            f"{LICENSE_API_URL}/notify",
+            json=payload,
+            timeout=aiohttp.ClientTimeout(total=10),
+            headers={
+                "Content-Type": "application/json",
+                "User-Agent": "Fleet-HA-Integration/3.0",
+            },
+        ) as resp:
+            if resp.status == 200:
+                result = await resp.json()
+                if not result.get("success"):
+                    _LOGGER.warning(
+                        "[Fleet] Server a refuzat '%s': %s",
+                        action, result.get("error"),
+                    )
     except Exception as err:  # noqa: BLE001
         _LOGGER.debug("[Fleet] Nu s-a putut raporta '%s': %s", action, err)
 
@@ -440,6 +504,12 @@ async def _async_inregistreaza_servicii(hass: HomeAssistant) -> None:
         nr_inmatriculare = call.data[CONF_NR_INMATRICULARE].strip().upper()
         nr_norm = normalizeaza_numar(nr_inmatriculare)
 
+        try:
+            _sanitize_nr_for_path(nr_norm)
+        except ValueError as err:
+            _LOGGER.error("[Fleet] Export: %s", err)
+            return
+
         entry = _gaseste_vehicul(hass, nr_inmatriculare)
 
         if entry is None:
@@ -485,15 +555,24 @@ async def _async_inregistreaza_servicii(hass: HomeAssistant) -> None:
 
     async def _handle_importa_date(call: ServiceCall) -> None:
         """Importă datele unui vehicul dintr-un fișier JSON."""
-        cale = call.data["cale_fisier"]
+        cale_raw = call.data["cale_fisier"]
+
+        # SEC-01: Validare path — restricționare la directorul config
+        try:
+            cale_valida = _valideaza_cale_fisier(hass, cale_raw, ".json")
+        except ValueError as err:
+            _notifica_eroare_import(hass, str(err))
+            return
 
         def _citeste() -> dict:
-            return json.loads(Path(cale).read_text(encoding="utf-8"))
+            return json.loads(cale_valida.read_text(encoding="utf-8"))
 
         try:
             date_import = await hass.async_add_executor_job(_citeste)
         except FileNotFoundError:
-            _notifica_eroare_import(hass, f"Fișierul nu a fost găsit: {cale}")
+            _notifica_eroare_import(
+                hass, f"Fișierul nu a fost găsit: {cale_valida}"
+            )
             return
         except (json.JSONDecodeError, OSError) as err:
             _notifica_eroare_import(
@@ -515,13 +594,19 @@ async def _async_inregistreaza_servicii(hass: HomeAssistant) -> None:
         nr = date_import[CONF_NR_INMATRICULARE].strip().upper()
         nr_norm = normalizeaza_numar(nr)
 
+        # SEC-03: Toate versiunile trec prin aplatizeaza_optiuni (whitelist)
         versiune = date_import.get("version", 1)
         if versiune >= 2:
             optiuni = aplatizeaza_optiuni(date_import)
         elif "optiuni" in date_import and isinstance(
             date_import["optiuni"], dict
         ):
-            optiuni = date_import["optiuni"]
+            # v1: wrap opțiunile într-o structură temporară și filtrăm
+            optiuni_raw = date_import["optiuni"]
+            optiuni = {
+                k: v for k, v in optiuni_raw.items()
+                if isinstance(k, str) and not k.startswith("_")
+            }
         else:
             _notifica_eroare_import(
                 hass,
@@ -599,6 +684,16 @@ async def _async_inregistreaza_servicii(hass: HomeAssistant) -> None:
             nr = entry.data.get(CONF_NR_INMATRICULARE, "")
             nr_norm = normalizeaza_numar(nr)
 
+            # SEC-04: Sanitizare nr pentru utilizare ca filename în ZIP
+            try:
+                _sanitize_nr_for_path(nr_norm)
+            except ValueError:
+                _LOGGER.warning(
+                    "[Fleet] Backup: nr normalizat nesigur, skip: %r",
+                    nr_norm,
+                )
+                continue
+
             vehicul_export = {
                 "version": BACKUP_VERSION,
                 "integration": DOMAIN,
@@ -666,14 +761,22 @@ async def _async_inregistreaza_servicii(hass: HomeAssistant) -> None:
         - Vehicul inexistent → creează config entry nouă
         - Notifică rezultatul (câte au reușit / eșuat)
         """
-        cale = call.data["cale_fisier"]
+        cale_raw = call.data["cale_fisier"]
+
+        # SEC-01: Validare path — restricționare la directorul config
+        try:
+            cale_valida = _valideaza_cale_fisier(hass, cale_raw, ".zip")
+        except ValueError as err:
+            _notifica_eroare_import(hass, str(err))
+            return
 
         def _citeste_zip() -> tuple[dict, dict[str, dict]]:
-            cale_path = Path(cale)
-            if not cale_path.exists():
-                raise FileNotFoundError(f"Fișierul nu a fost găsit: {cale}")
+            if not cale_valida.exists():
+                raise FileNotFoundError(
+                    f"Fișierul nu a fost găsit: {cale_valida}"
+                )
 
-            with zipfile.ZipFile(cale_path, "r") as zf:
+            with zipfile.ZipFile(cale_valida, "r") as zf:
                 # Citește metadata
                 try:
                     meta = json.loads(zf.read("metadata.json"))
@@ -683,6 +786,13 @@ async def _async_inregistreaza_servicii(hass: HomeAssistant) -> None:
                 # Citește toate vehiculele
                 vehicule: dict[str, dict] = {}
                 for name in zf.namelist():
+                    # SEC-02: Validare entry name (anti zip-slip)
+                    if not _valideaza_zip_entry_name(name):
+                        _LOGGER.warning(
+                            "[Fleet] Restore: entry suspect ignorat: %s",
+                            name,
+                        )
+                        continue
                     if name.startswith("vehicule/") and name.endswith(
                         ".json"
                     ):
@@ -731,7 +841,12 @@ async def _async_inregistreaza_servicii(hass: HomeAssistant) -> None:
                 elif "optiuni" in date_vehicul and isinstance(
                     date_vehicul["optiuni"], dict
                 ):
-                    optiuni = date_vehicul["optiuni"]
+                    # SEC-03: v1 — filtrăm chei cu underscore prefix
+                    optiuni_raw = date_vehicul["optiuni"]
+                    optiuni = {
+                        k: v for k, v in optiuni_raw.items()
+                        if isinstance(k, str) and not k.startswith("_")
+                    }
                 else:
                     optiuni = aplatizeaza_optiuni(date_vehicul)
 
