@@ -635,7 +635,7 @@ async def _async_inregistreaza_servicii(hass: HomeAssistant) -> None:
 
         hass.config_entries.async_update_entry(entry, options=optiuni)
 
-        _LOGGER.info("Import reușit pentru %s din %s", nr, cale)
+        _LOGGER.info("Import reușit pentru %s din %s", nr, cale_valida)
         persistent_notification.async_create(
             hass,
             f"Datele vehiculului **{nr}** au fost importate cu succes.",
