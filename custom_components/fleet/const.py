@@ -698,3 +698,5 @@ def normalizeaza_numar(numar: str) -> str:
     Exemplu: 'B123ABC' -> 'b123abc'
     """
     return numar.strip().lower()
+
+LICENSE_PURCHASE_URL: Final = "https://github.com/cnecrea/fleet/issues"
