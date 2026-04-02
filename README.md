@@ -13,9 +13,9 @@
 
 **Manager de flotă** este o integrare custom pentru Home Assistant care transformă instanța ta într-un sistem complet de management al flotei de vehicule. A fost concepută pentru firmele de transport, dar funcționează la fel de bine pentru oricine dorește să-și țină evidența vehiculelor într-un singur loc.
 
-Integrarea centralizează toate informațiile legate de un vehicul: documente (RCA, ITP, rovinieta, licențe transport), asigurări, mentenanță cu tracking pe kilometri, combustibil și AdBlue, date despre șofer (permis, CPC, card tahograf, fișe medicale), remorcă, costuri extinse (taxe de drum pe 16 țări, amenzi) și echipament obligatoriu. Totul este accesibil prin interfața nativă Home Assistant, fără a depinde de aplicații externe.
+Integrarea centralizează toate informațiile legate de un vehicul: documente (RCA, ITP, rovinieta, licențe transport), asigurări, mentenanță cu tracking pe kilometri, combustibil și AdBlue, date despre șofer (permis, CPC, card tahograf, fișe medicale), remorcă, costuri extinse (taxe de drum pe 16 țări, amenzi), echipament obligatoriu și **sistem de licență**. Totul este accesibil prin interfața nativă Home Assistant, fără a depinde de aplicații externe.
 
-Fiecare vehicul adăugat apare ca un **dispozitiv separat** cu senzori dedicați. Senzorii sunt **condiționați** — apar doar când au date completate. La prima configurare (doar nr. de înmatriculare), apare un singur senzor de informații generale. Pe măsură ce completezi date, apar automat senzorii corespunzători.
+Fiecare vehicul adăugat apare ca un **dispozitiv separat** cu senzori dedicați. Senzorii sunt **condiționați** — apar doar când au date completate. La prima configurare (doar nr. de înmatriculare), apare un singur senzor de informații generale. Pe măsură ce completezi date, apar automat senzorii corespunzători. **Reconfigurare fără reinstalare** — OptionsFlow pentru credențiale și licență.
 
 ---
 
@@ -117,6 +117,12 @@ Fiecare document cu dată de expirare generează un senzor cu **countdown automa
 Categoriile de mentenanță cu tracking pe km (revizie ulei, distribuție, plăcuțe/discuri frână) afișează **km rămași** calculați automat din diferența între km următoarea operațiune și km curent al vehiculului.
 
 Senzorul **Cost total** calculează automat costul pe anul curent, cu defalcare pe categorii (asigurări, taxe, mentenanță, combustibil) și istoric pe ani anteriori din datele arhivate.
+
+### Senzor licență (fără licență validă)
+
+| Senzor | Entity ID | Valoare principală | Icon |
+|--------|-----------|-------------------|------|
+| Licență necesară | `sensor.fleet_{nr_inmatriculare}_licenta` | „Licență necesară" | mdi:license |
 
 ### Exemple de automatizări
 
@@ -240,7 +246,9 @@ La prima instalare se activează automat o perioadă de **trial de 30 de zile** 
 
 ### Activare
 
-Activarea se face din **Setări → Manager de flotă → Configurare → Licență**, unde introduci cheia primită (format: `FLEET-XXXX-XXXX-XXXX-XXXX`).
+Licențele se achiziționează de la: [hubinteligent.org/licenta/fleet](https://hubinteligent.org/licenta/fleet)
+
+Activarea se face din **Setări → Dispozitive și Servicii → Manager de flotă → Configurare → Licență**, unde introduci cheia primită (format: `FLEET-XXXX-XXXX-XXXX-XXXX`).
 
 După activare, ecranul de licență afișează statusul complet: tipul licenței, cheia mascată, data activării și data expirării.
 
