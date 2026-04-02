@@ -1551,6 +1551,9 @@ class LicentaNecesaraSensor(SensorEntity):
         self._numar_normalizat = numar_normalizat
         self._date_vehicul = date_vehicul
         self._attr_unique_id = f"fleet_licenta_{numar_normalizat}"
+        self._attr_name = "Licență necesară"
+        # OBLIGATORIU: entity_id explicit — pattern consistent între integrări
+        self.entity_id = f"sensor.fleet_licenta_{numar_normalizat}"
 
     @property
     def device_info(self) -> DeviceInfo:
@@ -1566,19 +1569,31 @@ class LicentaNecesaraSensor(SensorEntity):
         )
 
     @property
-    def name(self) -> str:
-        """Returnează numele senzorului."""
-        return "Fleet"
-
-    @property
     def native_value(self) -> str:
-        """Returnează 'Licență necesară'."""
+        """Returnează status-ul licenței — vizibil clar pentru utilizator."""
+        mgr = self.hass.data.get(DOMAIN, {}).get(LICENSE_DATA_KEY)
+        if mgr is not None:
+            status = mgr.status
+            if status == "expired":
+                return "Licență expirată"
+            if status == "trial":
+                days = mgr.trial_days_remaining
+                return f"Trial — {days} zile rămase" if days > 0 else "Trial expirat"
         return "Licență necesară"
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
-        """Returnează informații suplimentare despre lipsa licenței."""
-        return {
-            "status": "Licență necesară",
-            "info": "Pentru a activa senzorii, este necesară o licență validă. Vizitați https://hubinteligent.org pentru mai multe detalii.",
+        """Returnează informații de diagnostic: status, zile rămase, link achiziție."""
+        attrs: dict[str, Any] = {
+            "nr_inmatriculare": self._nr_inmatriculare,
         }
+        mgr = self.hass.data.get(DOMAIN, {}).get(LICENSE_DATA_KEY)
+        if mgr is not None:
+            attrs["status_licență"] = mgr.status
+            if mgr.status == "trial":
+                attrs["zile_trial_rămase"] = mgr.trial_days_remaining
+            attrs["informații"] = (
+                "Achiziționează o licență de pe hubinteligent.org "
+                "sau din Buy Me a Coffee."
+            )
+        return attrs
