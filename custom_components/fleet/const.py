@@ -699,4 +699,4 @@ def normalizeaza_numar(numar: str) -> str:
     """
     return numar.strip().lower()
 
-LICENSE_PURCHASE_URL: Final = "https://hubinteligent.org/ref?=flota"
+LICENSE_PURCHASE_URL: Final = "https://hubinteligent.org/donate?ref=flota"
