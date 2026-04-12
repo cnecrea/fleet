@@ -555,6 +555,16 @@ class LicenseManager:
             _LOGGER.info("[Fleet:License] licența a expirat (token local)")
             return False
 
+        # Verifică și status-ul de la server (dacă avem cache valid)
+        if self._status_token and self._is_status_cache_valid():
+            server_status = self._status_token.get("status")
+            if server_status not in ("licensed", "trial"):
+                _LOGGER.warning(
+                    "[Fleet:License] serverul raportează status '%s' — licență invalidă",
+                    server_status,
+                )
+                return False
+
         # Dacă cache-ul de status a expirat, verifică perioadă de grație
         if self._status_token and not self._is_status_cache_valid():
             if self._is_within_grace_period():
