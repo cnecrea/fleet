@@ -21,6 +21,7 @@ from homeassistant.core import HomeAssistant, ServiceCall
 from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers import entity_registry as er
+from homeassistant.helpers import issue_registry as ir
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.event import (
     async_track_point_in_time,
@@ -34,6 +35,7 @@ from .const import (
     CONF_NR_INMATRICULARE,
     DOMAIN,
     LICENSE_DATA_KEY,
+    LICENSE_PURCHASE_URL,
     PLATFORMS,
     SERVICE_ACTUALIZEAZA_DATE,
     SERVICE_BACKUP_FLOTA,
@@ -146,6 +148,59 @@ def _valideaza_zip_entry_name(name: str) -> bool:
 # ─────────────────────────────────────────────
 
 
+
+def _update_license_notifications(hass: HomeAssistant, mgr: LicenseManager) -> None:
+    """Creează sau șterge notificările de expirare licență/trial."""
+    if mgr.is_valid:
+        ir.async_delete_issue(hass, DOMAIN, "trial_expired")
+        ir.async_delete_issue(hass, DOMAIN, "license_expired")
+        persistent_notification.async_dismiss(hass, "fleet_license_expired")
+        return
+
+    has_token = bool(mgr._data.get("activation_token"))
+
+    if has_token:
+        issue_id = "license_expired"
+        notif_title = "Manager de flotă — Licența a expirat"
+        notif_message = (
+            "Licența pentru integrarea **Manager de flotă** a expirat.\n\n"
+            "Senzorii sunt dezactivați până la reînnoirea licenței.\n\n"
+            f"[Reînnoiește licența]({LICENSE_PURCHASE_URL})"
+        )
+    else:
+        issue_id = "trial_expired"
+        notif_title = "Manager de flotă — Licența de probă a expirat"
+        notif_message = (
+            "Perioada de evaluare gratuită pentru integrarea **Manager de flotă** s-a încheiat.\n\n"
+            "Senzorii sunt dezactivați până la obținerea unei licențe.\n\n"
+            f"[Obține o licență acum]({LICENSE_PURCHASE_URL})"
+        )
+
+    other_id = "license_expired" if issue_id == "trial_expired" else "trial_expired"
+    ir.async_delete_issue(hass, DOMAIN, other_id)
+
+    ir.async_create_issue(
+        hass,
+        DOMAIN,
+        issue_id,
+        is_fixable=False,
+        is_persistent=True,
+        learn_more_url=LICENSE_PURCHASE_URL,
+        severity=ir.IssueSeverity.WARNING,
+        translation_key=issue_id,
+        translation_placeholders={"learn_more_url": LICENSE_PURCHASE_URL},
+    )
+
+    persistent_notification.async_create(
+        hass,
+        notif_message,
+        title=notif_title,
+        notification_id="fleet_license_expired",
+    )
+
+    _LOGGER.debug("[Fleet] Notificare expirare creată: %s", issue_id)
+
+
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Configurează o intrare pentru un vehicul de transport."""
     nr = entry.data.get(CONF_NR_INMATRICULARE, "?")
@@ -219,11 +274,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                     _LOGGER.warning(
                         "[Fleet] Licența a devenit invalidă — reîncarc senzorii"
                     )
+                    _update_license_notifications(hass, mgr)
                     await mgr._async_reload_entries()
                 elif not was_valid and now_valid:
                     _LOGGER.info(
                         "[Fleet] Licența a redevenit validă — reîncarc senzorii"
                     )
+                    _update_license_notifications(hass, mgr)
                     await mgr._async_reload_entries()
 
                 # Reprogramează heartbeat-ul la intervalul actualizat de server
@@ -304,6 +361,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                         _LOGGER.warning(
                             "[Fleet] Licența a devenit invalidă — reîncarc"
                         )
+                    _update_license_notifications(hass, mgr_now)
                     await mgr_now._async_reload_entries()
 
                 # Programează următorul check (dacă serverul a dat valid_until nou)
@@ -342,6 +400,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                 "[Fleet] Licență activă — tip: %s",
                 license_mgr.license_type,
             )
+
+        # ── Verificare inițială notificări expirare licență/trial ──
+        _update_license_notifications(hass, license_mgr)
     else:
         _LOGGER.debug(
             "[Fleet] LicenseManager există deja (entry suplimentară: %s)", nr
