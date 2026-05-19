@@ -1753,7 +1753,17 @@
           "vizite": 2,
           "vizitatori_unici": 2
         }
-      ]
+      ],
+      "clones_total": 6,
+      "clones_unice": 4,
+      "views_total": 0,
+      "views_unice": 0
+    },
+    "2026-05-19": {
+      "stars": 1,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0
     }
   },
   "releases": {
@@ -1768,5 +1778,5 @@
     "1.1.0": 0,
     "1.0.0": 2
   },
-  "ultima_actualizare": "2026-05-18T09:39:06Z"
+  "ultima_actualizare": "2026-05-19T08:57:35Z"
 }
