@@ -1813,7 +1813,24 @@
       "stars": 1,
       "forks": 0,
       "watchers": 0,
-      "open_issues": 0
+      "open_issues": 0,
+      "clones_total": 19,
+      "clones_unice": 9,
+      "views_total": 1,
+      "views_unice": 1
+    },
+    "2026-05-25": {
+      "stars": 1,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "referrers": [
+        {
+          "sursa": "github.com",
+          "vizite": 1,
+          "vizitatori_unici": 1
+        }
+      ]
     }
   },
   "releases": {
@@ -1828,5 +1845,5 @@
     "1.1.0": 0,
     "1.0.0": 2
   },
-  "ultima_actualizare": "2026-05-24T08:16:05Z"
+  "ultima_actualizare": "2026-05-25T09:47:07Z"
 }
